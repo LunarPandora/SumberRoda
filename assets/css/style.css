@@ -1,0 +1,130 @@
+@import './variables/colors.css';
+@import './variables/fonts.css';
+@import './icons.css';
+
+html, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins Bold";
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+body{
+    font-family: 'Poppins', serif;
+    font-weight: var(--fw-medium);
+}
+
+.primary-text{
+    color: var(--primary-color);
+    font-weight: var(--fw-medium);
+    font-size: var(--sm-text);
+}
+
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.btn{
+    padding: 6px 12px;
+    background-color: transparent;
+    outline: none;
+    font-size: var(--sm-text);
+    font-weight: var(--fw-semibold);
+}
+
+.btn-secondary{
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary{
+    border: 2px solid var(--primary-color);
+    color: var(--white-color);
+    background-color: var(--background-color);
+    transition: background-color .3s ease-out;
+}
+
+.btn-outline-primary:where(:hover, .active){
+    background-color: var(--primary-color);
+}
+
+/*******************************
+*   Navbar
+*******************************/
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+header ul{
+    color: var(--white-color);
+    display: flex;
+    font-family: inherit;
+    font-weight: var(--fw-normal);
+    gap: 20px;
+    width: auto;
+    justify-content: center;
+}
+
+header .list-navbar li{
+    padding: 8px 15px;
+}
+
+.list-navbar p{
+    transition: .3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.list-navbar li:where(:hover, .active) > p{
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/*******************************
+*   Hero section
+*******************************/
+#hero-section{
+    height: 100vh;
+    background: radial-gradient(farthest-corner circle at -100px, rgba(230,230,230, .3) .01%, transparent 35%),
+        radial-gradient(farthest-corner circle at 99%, rgba(255,122,48, .4) .01%, transparent 35%),
+        linear-gradient(to right, rgba(30,30,30,.2), rgba(30,30,30,.4)),
+        url('../img/hero-image.png');
+    backdrop-filter: brightness(80%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+#hero-section .hero-title{
+    color: var(--white-color);
+    padding: 60px 0;
+}
+
+.hero-title :where(h1, span){
+    font-size: var(--x-giant-text);
+    font-weight: var(--fw-extrabold);
+    font-family: 'Poppins Bold';
+}
+
+.hero-title h4{
+    font-weight: var(--fw-normal);
+    font-style: italic;
+}

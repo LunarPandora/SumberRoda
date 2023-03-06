@@ -1,0 +1,22 @@
+:root{
+    --xxs-text: 0.75rem;
+    --xs-text: 0.875rem;
+    --sm-text: 1rem;
+    --md-text: 1.125rem;
+    --lg-text: 1.25rem;
+    --xl-text: 1.5rem;
+    --xxl-text: 1.75rem;
+    --title-text: 2rem;
+    --giant-text: 2.5rem;
+    --x-giant-text: 3rem;
+    
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+}
