@@ -1,6 +1,8 @@
 @import './variables/colors.css';
 @import './variables/fonts.css';
+@import './variables/metrics.css';
 @import './icons.css';
+@import './general.css';
 
 html, *{
     margin: 0;
@@ -20,7 +22,7 @@ html, *{
 }
 
 body{
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: var(--fw-medium);
 }
 
@@ -31,8 +33,8 @@ body{
 }
 
 .container{
-    max-width: 1280px;
-    margin: 0 auto;
+    max-width: 100vw;
+    margin: 0;
 }
 
 ul{
@@ -88,6 +90,10 @@ header .list-navbar li{
     padding: 8px 15px;
 }
 
+header .list-navbar{
+    padding: 20px;
+}
+
 .list-navbar p{
     transition: .3s ease-in-out;
     border-bottom: 2px solid transparent;
@@ -127,4 +133,33 @@ header .list-navbar li{
 .hero-title h4{
     font-weight: var(--fw-normal);
     font-style: italic;
+}
+
+.items-nav{
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.items-nav h2{
+    font-size: var(--title-text);
+    font-weight: var(--fw-extrabold);
+}
+
+[class^="items-card-"]{
+    aspect-ratio: 1 / 1;
+    width: 15%;
+    background-image: url(../img/card-pill-1.png);
+    background-size: cover;
+}
+
+[class^="items-card-"] img{
+    width: 60%;
+    height: 60%;
+    margin-bottom: 10px;
+}
+
+[class^="items-card-"] p{
+    font-size: var(--lg-text);
+    font-weight: var(--fw-bold);
+    letter-spacing: 1.3px;
 }

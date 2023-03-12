@@ -1,0 +1,42 @@
+/* Warning : For root class only (Mainly used class)! */
+@import './variables/colors.css';
+
+
+/* Fixed color classes */
+.text-white{
+    color: var(--white-color);
+}
+
+.text-black{
+    color: var(--black-color);
+}
+/* =================== */
+
+
+.flex{
+    display: flex;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.items-center{
+    align-items: center;
+}
