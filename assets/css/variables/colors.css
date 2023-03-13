@@ -1,6 +1,12 @@
 :root{
     --primary-color: rgb(255,122,48); /* #FF7A30 */
+    --secondary-color: #222;
     --background-color: #111;
+    --black-color: #000;
     --dark-color: #333;
     --white-color: #f9f9f9;
+    --success-color: #376C42;
+    --light-success-color: #D6EFDB;
+    --danger-color: #7F3838;
+    --light-danger-color: #F7D6DF;
 }

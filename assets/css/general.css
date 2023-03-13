@@ -1,0 +1,80 @@
+/* Warning : For root class only (Mainly used class)! */
+@import './variables/colors.css';
+
+
+/* Fixed color classes */
+.text-white{
+    color: var(--white-color);
+}
+
+.text-black{
+    color: var(--black-color);
+}
+
+.text-primary{
+    color: var(--primary-color);
+}
+/* =================== */
+
+/* Fixed label classes */
+.label{
+    padding: 4px;
+    border-radius: 2px;
+    font-size: var(--xs-text);
+    font-weight: var(--fw-medium);
+}
+
+.label-success{
+    background-color: var(--success-color);
+    color: var(--light-success-color);
+}
+
+.label-danger{
+    background-color: var(--danger-color);
+    color: var(--light-danger-color);
+}
+/* =================== */
+
+.flex{
+    display: flex;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.overflow-x{
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.overflow-y{
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+}

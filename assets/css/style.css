@@ -1,6 +1,8 @@
 @import './variables/colors.css';
 @import './variables/fonts.css';
+@import './variables/metrics.css';
 @import './icons.css';
+@import './general.css';
 
 html, *{
     margin: 0;
@@ -25,8 +27,14 @@ html, *{
 }
 
 body{
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: var(--fw-medium);
+}
+
+a{
+    text-decoration: none;
+    font-size: var(--sm-text);
+    color: var(--white-color);
 }
 
 .primary-text{
@@ -107,6 +115,10 @@ header .list-navbar li{
     padding: 8px 15px;
 }
 
+header .list-navbar{
+    padding: 20px;
+}
+
 .list-navbar p{
     transition: .3s ease-in-out;
     border-bottom: 2px solid transparent;
@@ -154,4 +166,188 @@ header .list-navbar li{
     font-family: 'Poppins Light';
     font-weight: var(--fw-normal);
     font-style: italic;
+}
+
+.items-nav{
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.items-nav h2{
+    font-size: var(--title-text);
+    font-weight: var(--fw-extrabold);
+}
+
+[class^="items-card-"]{
+    aspect-ratio: 1 / 1;
+    width: 15%;
+    background-image: url(../img/card-pill-1.png);
+    background-size: cover;
+}
+
+[class^="items-card-"] img{
+    width: 60%;
+    height: 60%;
+    margin-bottom: 10px;
+}
+
+[class^="items-card-"] p{
+    font-size: var(--lg-text);
+    font-weight: var(--fw-bold);
+    letter-spacing: 1.3px;
+}
+
+main{
+    background: linear-gradient(to right, rgba(0,0,0,.4), rgba(40,40,40,.7)) top left repeat,
+                url('../img/background-body.png') top/contain no-repeat,
+                url('../img/background-body-2.png') bottom/contain no-repeat,
+                var(--black-color) top left repeat;
+    min-height: 100vh;
+    background-size: 1400px;
+    background-position: auto, 20px 0, 600px 0, auto;
+}
+
+/*******************************
+*   Products
+*******************************/
+.products{
+    border-bottom: 2px solid var(--dark-color);
+}
+.products :where(h4, span){
+    font-size: var(--xl-text);
+}
+
+.product-list .card{
+    min-width: 180px;
+    scrollbar-color: var(--primary-color) var(--white-color);
+    scrollbar-width: thin;
+}
+
+.product-list::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 30px;
+    background-color: var(--white-color);
+}
+
+.product-list::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 30px;
+}
+
+.card{
+    max-width: 180px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.card .card-head{
+    width: 100%;
+    aspect-ratio: auto 5/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+    border-radius: inherit;
+}
+
+.card .card-head img{
+    width: 100%;
+    height: 95%;
+    aspect-ratio: auto 5/3;
+    object-fit: contain;
+}
+
+.card .card-body{
+    background-color: var(--dark-color);
+    border-radius: inherit;
+}
+
+.card .card-body .item-name{
+    font-size: var(--xs-text);
+    font-weight: var(--fw-normal);
+    color: var(--white-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    min-height: 32px;
+    vertical-align: middle;
+}
+
+.card .card-body .item-price{
+    font-size: var(--xs-text);
+    font-weight: var(--fw-semibold);
+}
+
+/*******************************
+*   why section
+*******************************/
+.why-section h2, .why-section h2 span{
+    font-size: var(--xxl-text);
+    text-align: center;
+    text-shadow: 2px 2px 30px var(--primary-color);
+}
+
+.why-section .content .why-section-part{
+    max-width: 50%;
+    flex: 1 1 50%;
+}
+
+.why-section-part h3{
+    padding: var(--a3) var(--a2);
+    font-size: var(--xl-text);
+    font-weight: var(--fw-bold);
+    color: var(--primary-color);
+}
+
+.why-section-part .separator{
+    border-left: 4px solid var(--white-color);
+}
+
+.why-section-part p{
+    font-size: var(--xs-text);
+    font-weight: var(--fw-medium);
+    color: var(--white-color);
+    padding: 0 var(--a2) var(--a5);
+}
+
+/*******************************
+*   operational hours
+*******************************/
+.operational-hours .info{
+    max-width: 35%;
+    flex: 1 1 35%;
+}
+
+.operational-hours .info h2{
+    font-size: var(--xl-text);
+    font-weight: var(--fw-semibold);
+    text-shadow: 0 0 10px var(--white-color);
+    padding: var(--a1);
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+}
+
+.operational-hours .info .info-part{
+    margin: var(--a3) 0;
+    padding: 0 var(--a1);
+    color: var(--white-color);
+}
+
+.location{
+    max-width: 65%;
+    flex: 1 1 65%;
+}
+
+.map{
+    width: 100%;
+    height: 100%;
+}
+
+.map .mapboxgl-control-container{
+    display: none;
 }
