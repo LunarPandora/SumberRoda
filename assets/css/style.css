@@ -15,6 +15,11 @@ html, *{
 }
 
 @font-face {
+    font-family: "Poppins Light";
+    src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
     font-family: "Poppins Bold";
     src: url('../fonts/Poppins-Bold.ttf');
 }
@@ -39,6 +44,20 @@ ul{
     list-style-type: none;
 }
 
+/*******************************
+*   Utilities
+*******************************/
+.d-flex{
+    display: flex;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+/*******************************
+*   Button style
+*******************************/
 .btn{
     padding: 6px 12px;
     background-color: transparent;
@@ -97,11 +116,17 @@ header .list-navbar li{
     border-bottom: 2px solid var(--primary-color);
 }
 
+/* @media (max-width:768px) {
+    header ul{
+        display: block;
+    }
+} */
+
 /*******************************
 *   Hero section
 *******************************/
 #hero-section{
-    height: 100vh;
+    height: 90vh;
     background: radial-gradient(farthest-corner circle at -100px, rgba(230,230,230, .3) .01%, transparent 35%),
         radial-gradient(farthest-corner circle at 99%, rgba(255,122,48, .4) .01%, transparent 35%),
         linear-gradient(to right, rgba(30,30,30,.2), rgba(30,30,30,.4)),
@@ -111,6 +136,7 @@ header .list-navbar li{
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    position: relative;
 }
 
 #hero-section .hero-title{
@@ -125,6 +151,7 @@ header .list-navbar li{
 }
 
 .hero-title h4{
+    font-family: 'Poppins Light';
     font-weight: var(--fw-normal);
     font-style: italic;
 }
