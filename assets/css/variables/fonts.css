@@ -20,3 +20,79 @@
     --fw-extrabold: 800;
     --fw-black: 900;
 }
+
+.text-2xs{
+    font-size: var(--xxs-text);
+}
+
+.text-xs{
+    font-size: var(--xs-text);
+}
+
+.text-sm{
+    font-size: var(--sm-text);
+}
+
+.text-md{
+    font-size: var(--md-text);
+}
+
+.text-lg{
+    font-size: var(--lg-text);
+}
+
+.text-xl{
+    font-size: var(--xl-text);
+}
+
+.text-2xl{
+    font-size: var(--xxl-text);
+}
+
+.text-3xl{
+    font-size: var(--title-text);
+}
+
+.text-4xl{
+    font-size: var(--giant-text);
+}
+
+.text-5xl{
+    font-size: var(--x-giant-text);
+}
+
+.fw-thin{
+    font-weight: var(--fw-thin);
+}
+
+.fw-extralight{
+    font-weight: var(--fw-extralight);
+}
+
+.fw-light{
+    font-weight: var(--fw-light);
+}
+
+.fw-normal{
+    font-weight: var(--fw-normal);
+}
+
+.fw-medium{
+    font-weight: var(--fw-medium);
+}
+
+.fw-semibold{
+    font-weight: var(--fw-semibold);
+}
+
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+
+.fw-extrabold{
+    font-weight: var(--fw-extrabold);
+}
+
+.fw-black{
+    font-weight: var(--fw-black);
+}
