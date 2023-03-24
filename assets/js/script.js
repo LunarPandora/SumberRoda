@@ -3,7 +3,7 @@ const mapGL = ({container, coordinate}) => {
     
     id = new mapboxgl.Map({
         container, // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: 'mapbox://styles/mapbox/dark-v11', // style URL
         center: [coordinate.long,coordinate.lat], // starting position [lng, lat]
         zoom: 12, // starting zoom
         projection: 'globe', // display the map as a 3D globe

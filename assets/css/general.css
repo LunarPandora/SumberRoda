@@ -14,6 +14,14 @@
 .text-primary{
     color: var(--primary-color);
 }
+
+.text-disabled{
+    color: var(--neutral-color);
+}
+
+.text-center{
+    text-align: center;
+}
 /* =================== */
 
 /* Fixed label classes */
@@ -63,6 +71,18 @@
     justify-content: space-around;
 }
 
+.content-center{
+    align-content: center;
+}
+
+.content-between{
+    align-content: space-between;
+}
+
+.content-around{
+    align-content: space-around;
+}
+
 .items-center{
     align-items: center;
 }
@@ -77,4 +97,9 @@
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
+}
+
+.img-fluid{
+    width: 100%;
+    height: auto;
 }

@@ -5,30 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumber Roda</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     
-    <script src="../assets/js/script.js" async></script>
+    <script src="./assets/js/script.js" async></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js' async></script>
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container">
-            <ul class="list-navbar">
-                <li class="active">
-                    <a href="#">Beranda</a>
-                </li>
-                <li>
-                    <a href="./products.html">Produk</a>
-                </li>
-                <li>
-                    <a href="#">Kontak</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="logo flex justify-between items-center">
+                    <a href="./index.html" class="text-primary">Sumber Roda <span class="text-white">Pontianak</span></a>
+                </div>
+                <ul class="list-navbar">
+                    <li class="active">
+                        <a href="./index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="./view/product.html">Produk</a>
+                    </li>
+                    <li>
+                        <a href="#">Kontak</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
     
     <section id="hero-section">
         <div class="container">
@@ -75,14 +80,14 @@
     </section>
     
     <main>
-        <div class="container">
-            <div class="products py-4" id="product">
+        <div class="container-fluid">
+            <div class="products py-4 mx-5" id="product">
                 <h4 class="text-primary">Produk yang sedang <span class="text-white">populer</span></h4>
                 
                 <div class="product-list flex py-2 overflow-x gap-1">
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -97,8 +102,8 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -113,8 +118,8 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -129,8 +134,8 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -145,8 +150,8 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -161,8 +166,8 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -177,8 +182,8 @@
                     </div>
                     
                     <div class="card">
-                        <div class="card-head py-1">
-                            <img src="../assets/img/roda.png" alt="roda">
+                        <div class="card-head py-1 bg-white">
+                            <img src="./assets/img/roda.png" alt="roda">
                         </div>
                         <div class="card-body p-2">
                             <div class="item-name"> SP SPORT MAXX 050+</div>
@@ -194,7 +199,7 @@
                 </div>
             </div>
             
-            <div class="why-section py-4" id="why-section">
+            <div class="why-section py-5 px-5" id="why-section">
                 <h2 class="text-primary text-center">Mengapa <span class="text-white">Sumber Roda Pontianak?</span></h2>
                 
                 <div class="content">
@@ -222,7 +227,7 @@
                 </div>
             </div>
             
-            <div class="operational-hours py-4">
+            <div class="operational-hours py-5 mx-5">
                 <div class="flex flex-wrap">
                     <div class="info">
                         <div class="top">
@@ -248,10 +253,45 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="review-section py-5 mx-5">
+                <h2 class="text-primary text-center">Review Dari <span class="text-white">Pelanggan</span></h2>
+                <div class="flex justify-between">
+                    <div>
+                        <div class="card mx-1 p-2">
+                            <div class="card-body flex flex-col items-center">
+                                <img src="./assets/img/avatar.jpg" class="img-fluid review-avatar" alt="roda">
+                                <h3 class="text-lg fw-bold text-center text-white py-3">"Ban nya berkualitas, pelayanan nya bagus dan cepat!"</h3>
+                                <p class="text-disabled">- Nadia Purwoto -</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card mx-1 p-2">
+                            <div class="card-body flex flex-col items-center">
+                                <img src="./assets/img/avatar.jpg" class="img-fluid review-avatar" alt="roda">
+                                <h3 class="text-lg fw-bold text-center text-white py-3">"Ban nya berkualitas, pelayanan nya bagus dan cepat!"</h3>
+                                <p class="text-disabled">- Nadia Purwoto -</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card mx-1 p-2">
+                            <div class="card-body flex flex-col items-center">
+                                <img src="./assets/img/avatar.jpg" class="img-fluid review-avatar" alt="roda">
+                                <h3 class="text-lg fw-bold text-center text-white py-3">"Ban nya berkualitas, pelayanan nya bagus dan cepat!"</h3>
+                                <p class="text-disabled">- Nadia Purwoto -</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
     </main>
+
+    <footer>
+        
+    </footer>
 </body>
 <script lang="js" async>
     
