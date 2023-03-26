@@ -221,10 +221,12 @@ nav .list-navbar li:where(:hover, .active){
 }
 
 main{
-    background: linear-gradient(to right, rgba(0,0,0,.4), rgba(40,40,40,.7)) top left repeat,
-                url('../img/background-body-3.png'),
-                /* url('../img/background-body-2.png') bottom/contain no-repeat, */
-                var(--black-color) top left repeat;
+    background: radial-gradient(ellipse at 0% 10%, rgba(230,230,230, .3) .01%, transparent 80px),
+        radial-gradient(ellipse at 100% 10%, rgba(255,122,48, .4) .01%, transparent 80px),
+        linear-gradient(to right, rgba(30,30,30,.2), rgba(30,30,30,.4)),
+        url('../img/background-body-3.png'),
+        var(--black-color) top left repeat;
+    backdrop-filter: brightness(80%);
     min-height: 100vh;
     background-size: contain;
     background-position: auto, 20px 0, 600px 0, auto;
@@ -240,15 +242,49 @@ main{
 /*******************************
 *   Products
 *******************************/
-.products{
+.products.home{
     border-bottom: 2px solid var(--dark-color);
 }
+
+.products .products-head{
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    padding: var(--a1) var(--a2);
+}
+
+.products .product-list{
+    width: 100%;
+}
+
 .products :where(h4, span){
     font-size: var(--xl-text);
 }
 
 .product-list .card{
     min-width: 180px;
+}
+
+.product-list.sidebar-page.flex-wrap .item{
+    flex: 1 1 20%;
+    max-width: 20%;
+    padding: 0 var(--a2) var(--a2) 0;
+}
+
+@media (max-width: 1400px) {
+    .product-list.sidebar-page.flex-wrap .item{
+        flex: 1 1 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 991px) {
+    .product-list.sidebar-page.flex-wrap .item{
+        flex: 1 1 33.3%;
+        max-width: 33.3%;
+    }
 }
 
 .card{
@@ -299,6 +335,7 @@ main{
 .card .card-body .item-price{
     font-size: var(--xs-text);
     font-weight: var(--fw-semibold);
+    padding: var(--a1) 0;
 }
 
 /*******************************
@@ -454,18 +491,58 @@ main{
 }
 
 .sidebar .sidebar-content .list-item > li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--a2) var(--a2);
+    padding: var(--a2) 0 var(--a2) var(--a2);
     border-bottom: 1px solid var(--white-color);
     border-top: 1px solid var(--white-color);
 }
 
 .sidebar .sidebar-content .list-item > li a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .sidebar-content .list-item > li a :where(span, i){
+    font-size: var(--xxs-text);
     color: var(--white-color);
 }
 
-.sidebar .sidebar-content .list-item > li.active a{
+.sidebar .sidebar-content .list-item > li:where(.active, :hover) a *{
     color: var(--primary-color);
+    transition: .3s ease-in-out;
+}
+
+.sidebar .sidebar-content .list-item > li.active i::before{
+    content: "\F0360";
+}
+
+.sidebar .sidebar-content .list-item > li.active .dropdown{
+    display: block;
+}
+
+.sidebar .sidebar-content .dropdown{
+    display: none;
+    width: 100%;
+    padding-left: var(--a2);
+    padding-top: var(--a2);
+}
+
+.sidebar .sidebar-content .dropdown > li{
+    padding: var(--a1);
+    font-size: var(--xxs-text)
+}
+
+.sidebar .sidebar-content .dropdown > li:where(:hover, .active){
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transition: .3s ease-in-out;
+}
+
+/*******************************
+*   sidebar section
+*******************************/
+.main-content{
+    flex: 1 1 75%;
+    max-width: 75%;
 }

@@ -1,6 +1,5 @@
 /* Warning : For root class only (Mainly used class)! */
-@import './variables/colors.css';
-
+@import './variables/index.css';
 
 /* Fixed color classes */
 .text-white{
