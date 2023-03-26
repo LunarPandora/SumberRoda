@@ -41,6 +41,11 @@
     background-color: var(--danger-color);
     color: var(--light-danger-color);
 }
+
+.label-neutral{
+    background-color: var(--neutral-color);
+    color: var(--dark-color);
+}
 /* =================== */
 
 .flex{
@@ -85,6 +90,22 @@
 
 .items-center{
     align-items: center;
+}
+
+.overflow-div{
+    scrollbar-color: var(--primary-color) var(--white-color);
+    scrollbar-width: thin;
+}
+
+.overflow-div::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 30px;
+    background-color: var(--white-color);
+}
+
+.overflow-div::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 30px;
 }
 
 .overflow-x{

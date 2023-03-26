@@ -2,9 +2,6 @@
 @import './icons.css';
 @import './general.css';
 
-/* import the content css */
-@import './content/index.css';
-
 html{
     min-height: 100vh;
 }
@@ -14,21 +11,6 @@ html, *{
     padding: 0;
     box-sizing: border-box;
     font-size: 16px;
-}
-
-@font-face {
-    font-family: "Poppins";
-    src: url('../fonts/Poppins-Regular.ttf');
-}
-
-@font-face {
-    font-family: "Poppins Light";
-    src: url('../fonts/Poppins-Light.ttf');
-}
-
-@font-face {
-    font-family: "Poppins Bold";
-    src: url('../fonts/Poppins-Bold.ttf');
 }
 
 body{
@@ -49,11 +31,6 @@ a{
 }
 
 .container{
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-.container-fluid{
     max-width: 100vw;
     margin: 0 auto;
 }
@@ -66,11 +43,18 @@ ul{
 *   Button style
 *******************************/
 .btn{
-    padding: 6px 12px;
+    padding: var(--a2);
     background-color: transparent;
     outline: none;
+    border: none;
+    border-radius: 2px;
     font-size: var(--sm-text);
     font-weight: var(--fw-semibold);
+}
+
+.btn-primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 
 .btn-secondary{
@@ -87,6 +71,42 @@ ul{
 
 .btn-outline-primary:where(:hover, .active){
     background-color: var(--primary-color);
+}
+
+/*******************************
+*   Input
+*******************************/
+.form-control{
+    width: 100%;
+    padding: var(--a2);
+    background-color: rgba(0,0,0, .4);
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 2px;
+    color: var(--white-color);
+    font-family: inherit;
+}
+
+.form-control::placeholder{
+    color: var(--neutral-color);
+    font-size: var(--xxs-text);
+    font-family: inherit;
+}
+
+/*******************************
+*   Search
+*******************************/
+.search-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-container .btn-search{
+    position: absolute;
+    margin: auto 0;
+    right: 0;
 }
 
 /*******************************
@@ -163,7 +183,6 @@ nav .list-navbar li:where(:hover, .active){
 .hero-title :where(h1, span){
     font-size: var(--x-giant-text);
     font-weight: var(--fw-extrabold);
-    font-family: 'Poppins Bold';
 }
 
 .hero-title h4{
@@ -203,11 +222,11 @@ nav .list-navbar li:where(:hover, .active){
 
 main{
     background: linear-gradient(to right, rgba(0,0,0,.4), rgba(40,40,40,.7)) top left repeat,
-                url('../img/background-body.png') top/contain no-repeat,
+                url('../img/background-body-3.png'),
                 /* url('../img/background-body-2.png') bottom/contain no-repeat, */
                 var(--black-color) top left repeat;
     min-height: 100vh;
-    background-size: cover;
+    background-size: contain;
     background-position: auto, 20px 0, 600px 0, auto;
     color: var(--white-color);
 }
@@ -230,19 +249,6 @@ main{
 
 .product-list .card{
     min-width: 180px;
-    scrollbar-color: var(--primary-color) var(--white-color);
-    scrollbar-width: thin;
-}
-
-.product-list::-webkit-scrollbar {
-    height: 6px;
-    border-radius: 30px;
-    background-color: var(--white-color);
-}
-
-.product-list::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 30px;
 }
 
 .card{
@@ -365,7 +371,6 @@ main{
 /*******************************
 *   Review section
 *******************************/
-
 .review-section{
     border-bottom: 2px solid var(--dark-color);
 }
@@ -378,4 +383,89 @@ main{
     aspect-ratio: auto 1/2;
     border-radius: 100%;
     width: 50%;
+}
+
+/*******************************
+*   slideshow section
+*******************************/
+.slideshow-container{
+    height: 50vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slideshow-container .slide-wrapper{
+    height: 50vh;
+    width: 300%;
+    display: flex;
+    white-space: nowrap;
+    animation: animateBanner 9s ease infinite;
+}
+
+.slideshow-container .slideshow-item:nth-child(1){
+    background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0, .6)), url('../img/slideshow/1.jpg');
+}
+
+.slideshow-container .slideshow-item:nth-child(2){
+    background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0, .6)), url('../img/slideshow/2.jpg');
+}
+
+.slideshow-container .slideshow-item:nth-child(3){
+    background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0, .6)), url('../img/slideshow/3.jpg');
+}
+
+.slideshow-container .slide-wrapper .slideshow-item{
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-delay: 3s;
+}
+
+@keyframes animateBanner{
+    10%{
+        margin-left: 0;
+    }
+    
+    40%{
+        margin-left: -100%;
+    }
+    
+    80%{
+        margin-left: -200%;
+    }
+}
+
+/*******************************
+*   sidebar section
+*******************************/
+.sidebar{
+    max-width: 25%;
+    flex: 1 1 25%;
+    padding: 0 var(--a2);
+}
+
+.sidebar .sidebar-content{
+    max-width: 100%;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.sidebar .sidebar-content .list-item > li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--a2) var(--a2);
+    border-bottom: 1px solid var(--white-color);
+    border-top: 1px solid var(--white-color);
+}
+
+.sidebar .sidebar-content .list-item > li a{
+    color: var(--white-color);
+}
+
+.sidebar .sidebar-content .list-item > li.active a{
+    color: var(--primary-color);
 }

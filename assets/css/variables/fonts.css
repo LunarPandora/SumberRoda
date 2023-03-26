@@ -21,6 +21,21 @@
     --fw-black: 900;
 }
 
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins Light";
+    src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: "Poppins Bold";
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
 .text-2xs{
     font-size: var(--xxs-text);
 }
@@ -82,6 +97,7 @@
 }
 
 .fw-semibold{
+    font-family: 'Poppins', sans-serif;
     font-weight: var(--fw-semibold);
 }
 

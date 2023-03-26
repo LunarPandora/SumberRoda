@@ -4,9 +4,9 @@
     --background-color: #111;
     --neutral-color: #777;
     --black-color: #000;
-    --dark-color: #333;
-    --white-color: #f9f9f9;
-    --success-color: #376C42;
+    --dark-color: rgb(51,51,51); /* #333 */
+    --white-color: #f1f1f1;
+    --success-color: rgb(55, 108, 66); /* #376c42 */
     --light-success-color: #D6EFDB;
     --danger-color: #7F3838;
     --light-danger-color: #F7D6DF;
