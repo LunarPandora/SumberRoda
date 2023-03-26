@@ -80,43 +80,43 @@
                             </button>
                         </div>
                         <!-- content dari sidebar -->
-                        <ul class="list-item">
-                            <li onclick="expandList" class="active">
-                                <a href="javascript: void(0);">
-                                    <span>Ban Mobil</span>
-                                    <i class="mdi mdi-menu-down"></i>
-                                </a>
+                        <ul class="list-item" id="sidebar-menu">
+                            <li class="item-list active">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=1">Ban Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(1)"></i>
+                                </div>
                                 
                                 <ul class="dropdown">
-                                    <li>Coba 1</li>
+                                    <li class="">Coba 1</li>
                                     <li>Coba 1</li>
                                 </ul>
                             </li>
-                            <li onclick="expandList">
-                                <a href="javascript: void(0);">
-                                    <span>Velg Mobil</span>
-                                    <i class="mdi mdi-menu-down"></i>
-                                </a>
+                            <li class="item-list">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=2">Velg Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(2)"></i>
+                                </div>
                                 
                                 <ul class="dropdown">
                                     
                                 </ul>
                             </li>
-                            <li onclick="expandList">
-                                <a href="javascript: void(0);">
-                                    <span>Oli Mobil</span>
-                                    <i class="mdi mdi-menu-down"></i>
-                                </a>
+                            <li class="item-list">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=3">Oli Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(3)"></i>
+                                </div>
                                 
                                 <ul class="dropdown">
                                     
                                 </ul>
                             </li>
-                            <li onclick="expandList">
-                                <a href="javascript: void(0);">
-                                    <span>Aki Mobil</span>
-                                    <i class="mdi mdi-menu-down"></i>
-                                </a>
+                            <li class="item-list">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=4">Aki Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(4)"></i>
+                                </div>
                                 
                                 <ul class="dropdown">
                                     
@@ -125,7 +125,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="main-content">
+                
+                <div class="main-content product-page">
                     <div class="products">
                         <div class="products-head">
                             <h4>Ban</h4>
@@ -370,7 +371,7 @@
                         <div class="product-list">
                             <div class="product-list sidebar-page flex flex-wrap py-2">
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=3" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/oli.png" alt="oli">
                                         </div>
@@ -388,7 +389,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=3" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/oli.png" alt="oli">
                                         </div>
@@ -406,7 +407,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=3" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/oli.png" alt="oli">
                                         </div>
@@ -424,7 +425,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=3" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/oli.png" alt="oli">
                                         </div>
@@ -442,7 +443,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=3" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/oli.png" alt="oli">
                                         </div>
@@ -460,7 +461,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=3" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/oli.png" alt="oli">
                                         </div>
@@ -488,7 +489,7 @@
                         <div class="product-list">
                             <div class="product-list sidebar-page flex flex-wrap py-2">
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=4" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/aki.png" alt="aki">
                                         </div>
@@ -506,7 +507,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=4" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/aki.png" alt="aki">
                                         </div>
@@ -524,7 +525,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=4" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/aki.png" alt="aki">
                                         </div>
@@ -542,7 +543,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=4" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/aki.png" alt="aki">
                                         </div>
@@ -560,7 +561,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=4" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/aki.png" alt="aki">
                                         </div>
@@ -578,7 +579,7 @@
                                 </div>
                                 
                                 <div class="item">
-                                    <a href="./detail-product.html?item-id=2" class="card">
+                                    <a href="./detail-product.html?item-id=4" class="card">
                                         <div class="card-head py-1 bg-white">
                                             <img src="../assets/img/aki.png" alt="aki">
                                         </div>

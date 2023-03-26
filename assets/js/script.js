@@ -9,3 +9,11 @@ const mapGL = ({container, coordinate}) => {
         projection: 'globe', // display the map as a 3D globe
     });
 }
+
+const expandSidebarItem = (item) => {
+    const sidebarMenu = document.querySelectorAll('#sidebar-menu .item');
+    
+    sidebarMenu.forEach(el => el.parentElement.classList.remove('active'));
+    
+    sidebarMenu[item-1].parentElement.classList.add('active')
+}
