@@ -1,6 +1,5 @@
 /* Warning : For root class only (Mainly used class)! */
-@import './variables/colors.css';
-
+@import './variables/index.css';
 
 /* Fixed color classes */
 .text-white{
@@ -40,6 +39,11 @@
 .label-danger{
     background-color: var(--danger-color);
     color: var(--light-danger-color);
+}
+
+.label-neutral{
+    background-color: var(--neutral-color);
+    color: var(--dark-color);
 }
 /* =================== */
 
@@ -87,6 +91,22 @@
     align-items: center;
 }
 
+.overflow-div{
+    scrollbar-color: var(--primary-color) var(--white-color);
+    scrollbar-width: thin;
+}
+
+.overflow-div::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 30px;
+    background-color: var(--white-color);
+}
+
+.overflow-div::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 30px;
+}
+
 .overflow-x{
     overflow-x: auto;
     overflow-y: hidden;
@@ -102,4 +122,8 @@
 .img-fluid{
     width: 100%;
     height: auto;
+}
+
+.list-style-none{
+    list-style-type: none !important;
 }

@@ -11,24 +11,26 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js' async></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <ul class="list-navbar">
-                <li class="active">
-                    <a href="#">Beranda</a>
-                </li>
-                <li>
-                    <a href="#why-section">Produk</a>
-                </li>
-                <li>
-                    <a href="#">Kontak</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
+    <nav>
+        <div class="container px-3">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="logo flex justify-between items-center">
+                    <a href="./index.html" class="text-primary">Sumber Roda <span class="text-white">Pontianak</span></a>
+                </div>
+                <ul class="list-navbar">
+                    <li class="active">
+                        <a href="./index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="./view/product.html">Produk</a>
+                    </li>
+                    <li>
+                        <a href="./view/aboutUs.html">Tentang Kami</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
     
     <section id="hero-section">
         <div class="container">
@@ -52,22 +54,22 @@
             </div>
             <div class="flex align-center justify-around py-5">
                 <div class="items-card-1 flex flex-col items-center justify-center p-3">
-                    <img src="../assets/img/icons/1.png">
+                    <img src="./assets/img/icons/1.png">
                     <p>TYRE</p>
                 </div>
 
                 <div class="items-card-2 flex flex-col items-center justify-center p-3">
-                    <img src="../assets/img/icons/2.png">
+                    <img src="./assets/img/icons/2.png">
                     <p>VELG</p>
                 </div>
 
                 <div class="items-card-3 flex flex-col items-center justify-center p-3">
-                    <img src="../assets/img/icons/3.png">
+                    <img src="./assets/img/icons/3.png">
                     <p>OIL</p>
                 </div>
 
                 <div class="items-card-4 flex flex-col items-center justify-center p-3">
-                    <img src="../assets/img/icons/4.png">
+                    <img src="./assets/img/icons/4.png">
                     <p>BATTERY</p>
                 </div>
             </div>
@@ -75,12 +77,12 @@
     </section>
     
     <main>
-        <div class="container-fluid">
-            <div class="products py-4 mx-5" id="product">
+        <div class="container">
+            <div class="products hoe py-4 mx-5" id="product">
                 <h4 class="text-primary">Produk yang sedang <span class="text-white">populer</span></h4>
                 
-                <div class="product-list flex py-2 overflow-x gap-1">
-                    <div class="card">
+                <div class="product-list overflow-div overflow-x flex py-2 gap-2">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -94,9 +96,9 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="card">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -110,9 +112,9 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="card">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -126,9 +128,9 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="card">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -142,9 +144,9 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="card">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -158,9 +160,9 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="card">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -174,9 +176,9 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="card">
+                    <a href="./view/detail-product.html?item-id=1" class="card">
                         <div class="card-head py-1 bg-white">
                             <img src="./assets/img/roda.png" alt="roda">
                         </div>
@@ -190,7 +192,7 @@
                                 <div class="label label-success">All Size</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             

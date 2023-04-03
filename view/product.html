@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumber Roda</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script src="../assets/js/script.js" async></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js' async></script>
+</head>
+<body>
+    <nav>
+        <div class="container px-3">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="logo flex justify-between items-center">
+                    <a href="../index.html" class="text-primary">Sumber Roda <span class="text-white">Pontianak</span></a>
+                </div>
+                <ul class="list-navbar">
+                    <li>
+                        <a href="../index.html">Beranda</a>
+                    </li>
+                    <li class="active">
+                        <a href="./product.html">Produk</a>
+                    </li>
+                    <li>
+                        <a href="./aboutUs.html">Tentang Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header>
+        <div class="slideshow">
+            <div class="slideshow-container">
+                <div class="slide-wrapper">
+                    <div class="slideshow-item text-center flex items-center justify-center">
+                        <div class="hero-title">
+                            <h1>
+                                <span class="primary-text">Sumber Roda</span> Pontianak
+                            </h1>
+                            <h4>Semua kebutuhan mobilmu ada di sini</h4>
+                        </div>
+                    </div>
+                    <div class="slideshow-item text-center flex items-center justify-center">
+                        <div class="hero-title">
+                            <h1>
+                                <span class="primary-text">Sumber Roda</span> Pontianak
+                            </h1>
+                            <h4>Semua kebutuhan mobilmu ada di sini</h4>
+                        </div>
+                    </div>
+                    <div class="slideshow-item text-center flex items-center justify-center">
+                        <div class="hero-title">
+                            <h1>
+                                <span class="primary-text">Sumber Roda</span> Pontianak
+                            </h1>
+                            <h4>Semua kebutuhan mobilmu ada di sini</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="container p-3">
+            <div class="flex flex-wrap">
+                <div class="sidebar">
+                    <div class="sidebar-content py-2 px-2 text-left">
+                        <!-- sidebar title -->
+                        <h4 class="text-lg fw-semibold">Kategori</h4>
+                        <!-- search container sidebar -->
+                        <div class="search-container my-2">
+                            <input type="text" class="form-control" placeholder="Cari Produk">
+                            <button class="btn btn-primary btn-search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                        <!-- content dari sidebar -->
+                        <ul class="list-item" id="sidebar-menu">
+                            <li class="item-list active">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=1">Ban Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(1)"></i>
+                                </div>
+                                
+                                <ul class="dropdown">
+                                    <li class="">Coba 1</li>
+                                    <li>Coba 1</li>
+                                </ul>
+                            </li>
+                            <li class="item-list">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=2">Velg Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(2)"></i>
+                                </div>
+                                
+                                <ul class="dropdown">
+                                    
+                                </ul>
+                            </li>
+                            <li class="item-list">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=3">Oli Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(3)"></i>
+                                </div>
+                                
+                                <ul class="dropdown">
+                                    
+                                </ul>
+                            </li>
+                            <li class="item-list">
+                                <div class="item">
+                                    <a href="./category.html?cat-id=4">Aki Mobil</a>
+                                    <i class="mdi mdi-menu-down" onclick="expandSidebarItem(4)"></i>
+                                </div>
+                                
+                                <ul class="dropdown">
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="main-content product-page">
+                    <div class="products">
+                        <div class="products-head">
+                            <h4>Ban</h4>
+                        </div>
+                        
+                        <div class="product-list">
+                            <div class="product-list sidebar-page flex flex-wrap py-2">
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=1" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/roda.png" alt="roda">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                                            <div class="item-price text-primary">
+                                                Rp 1.237.332
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=1" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/roda.png" alt="roda">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                                            <div class="item-price text-primary">
+                                                Rp 1.237.332
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=1" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/roda.png" alt="roda">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                                            <div class="item-price text-primary">
+                                                Rp 1.237.332
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=1" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/roda.png" alt="roda">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                                            <div class="item-price text-primary">
+                                                Rp 1.237.332
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=1" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/roda.png" alt="roda">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                                            <div class="item-price text-primary">
+                                                Rp 1.237.332
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=1" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/roda.png" alt="roda">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                                            <div class="item-price text-primary">
+                                                Rp 1.237.332
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="products">
+                        <div class="products-head">
+                            <h4>Velg</h4>
+                        </div>
+                        
+                        <div class="product-list">
+                            <div class="product-list sidebar-page flex flex-wrap py-2">
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=2" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/velg.png" alt="velg">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">RAYS Ce28 Ring 14x6.5</div>
+                                            <div class="item-price text-primary">
+                                                Rp 3.200.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=2" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/velg.png" alt="velg">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">RAYS Ce28 Ring 14x6.5</div>
+                                            <div class="item-price text-primary">
+                                                Rp 3.200.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=2" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/velg.png" alt="velg">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">RAYS Ce28 Ring 14x6.5</div>
+                                            <div class="item-price text-primary">
+                                                Rp 3.200.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=2" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/velg.png" alt="velg">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">RAYS Ce28 Ring 14x6.5</div>
+                                            <div class="item-price text-primary">
+                                                Rp 3.200.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=2" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/velg.png" alt="velg">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">RAYS Ce28 Ring 14x6.5</div>
+                                            <div class="item-price text-primary">
+                                                Rp 3.200.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=2" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/velg.png" alt="velg">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">RAYS Ce28 Ring 14x6.5</div>
+                                            <div class="item-price text-primary">
+                                                Rp 3.200.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="products">
+                        <div class="products-head">
+                            <h4>Oli</h4>
+                        </div>
+                        
+                        <div class="product-list">
+                            <div class="product-list sidebar-page flex flex-wrap py-2">
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=3" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/oli.png" alt="oli">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">Shell Helix HX3 1 Liter</div>
+                                            <div class="item-price text-primary">
+                                                Rp 37.500
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=3" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/oli.png" alt="oli">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">Shell Helix HX3 1 Liter</div>
+                                            <div class="item-price text-primary">
+                                                Rp 37.500
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=3" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/oli.png" alt="oli">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">Shell Helix HX3 1 Liter</div>
+                                            <div class="item-price text-primary">
+                                                Rp 37.500
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=3" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/oli.png" alt="oli">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">Shell Helix HX3 1 Liter</div>
+                                            <div class="item-price text-primary">
+                                                Rp 37.500
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=3" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/oli.png" alt="oli">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">Shell Helix HX3 1 Liter</div>
+                                            <div class="item-price text-primary">
+                                                Rp 37.500
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=3" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/oli.png" alt="oli">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">Shell Helix HX3 1 Liter</div>
+                                            <div class="item-price text-primary">
+                                                Rp 37.500
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="products">
+                        <div class="products-head">
+                            <h4>Aki</h4>
+                        </div>
+                        
+                        <div class="product-list">
+                            <div class="product-list sidebar-page flex flex-wrap py-2">
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=4" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/aki.png" alt="aki">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">GS Astra MF NS60L / 46B24L</div>
+                                            <div class="item-price text-primary">
+                                                Rp 900.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=4" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/aki.png" alt="aki">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">GS Astra MF NS60L / 46B24L</div>
+                                            <div class="item-price text-primary">
+                                                Rp 900.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=4" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/aki.png" alt="aki">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">GS Astra MF NS60L / 46B24L</div>
+                                            <div class="item-price text-primary">
+                                                Rp 900.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=4" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/aki.png" alt="aki">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">GS Astra MF NS60L / 46B24L</div>
+                                            <div class="item-price text-primary">
+                                                Rp 900.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=4" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/aki.png" alt="aki">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">GS Astra MF NS60L / 46B24L</div>
+                                            <div class="item-price text-primary">
+                                                Rp 900.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                <div class="item">
+                                    <a href="./detail-product.html?item-id=4" class="card">
+                                        <div class="card-head py-1 bg-white">
+                                            <img src="../assets/img/aki.png" alt="aki">
+                                        </div>
+                                        <div class="card-body p-2">
+                                            <div class="item-name">GS Astra MF NS60L / 46B24L</div>
+                                            <div class="item-price text-primary">
+                                                Rp 900.000
+                                            </div>
+                                            <div class="labels flex flex-wrap gap-1">
+                                                <div class="label label-danger">Promo</div>
+                                                <div class="label label-success">All Size</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script lang="js" async>
+    window.onload = () => {
+    
+    }
+</script>
+</html>
