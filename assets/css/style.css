@@ -212,7 +212,7 @@ main{
     background-position: auto, 20px 0, 600px 0, auto;
 }
 
-.why-section h2, .why-section h2 span, .review-section h2, .review-section h2 span, .faq-section h2, .faq-section h2 span{
+.why-section h2, .why-section h2 span, .review-section h2, .review-section h2 span, .faq-section h2, .faq-section h2 span, .footer-section h2, .footer-section h2 span{
     font-size: var(--xxl-text);
     text-align: center;
     text-shadow: 2px 2px 30px var(--primary-color);
@@ -367,13 +367,8 @@ main{
 }
 
 /*******************************
-*   operational hours
+*   review
 *******************************/
-
-.review-section{
-    border-bottom: 2px solid var(--dark-color);
-}
-
 .review-section div{
     padding: var(--a2);
 }
@@ -382,4 +377,37 @@ main{
     aspect-ratio: auto 1/2;
     border-radius: 100%;
     width: 50%;
+}
+
+/*******************************
+*   footer
+*******************************/
+
+footer{
+    background-color: var(--secondary-color);
+}
+
+.footer-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-link div{
+    margin-right: 30px;
+}
+
+.footer-link div p{
+    margin-bottom: 10px;
+}
+
+.footer-link div p:first-child{
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
