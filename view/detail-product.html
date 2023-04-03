@@ -39,13 +39,106 @@
                 <a href="./product.html">List produk</a> /
                 <a href="javascript: void(0);" id="nama-produk">Smaart</a>
             </div>
+            
+            <div class="product-detail my-3" id="detail-product"></div>
+            
+            <div class="products hoe py-3" id="product">
+                <h4 class="text-white">Produk Lainnya</h4>
+                
+                <div class="product-list overflow-div overflow-x flex py-2 gap-2">
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="./detail-product.html?item-id=1" class="card">
+                        <div class="card-head py-1 bg-white">
+                            <img src="../assets/img/roda.png" alt="roda">
+                        </div>
+                        <div class="card-body p-2">
+                            <div class="item-name"> SP SPORT MAXX 050+</div>
+                            <div class="item-price text-primary">
+                                Rp 1.237.332
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
         </div>
     </main>
     
 </body>
 <script lang="js" async>
     window.onload = () => {
-    
+        changeDetailProduct(window.location.href.split('?')[1].split('=')[1]);
     }
 </script>
 </html>
