@@ -435,6 +435,32 @@ main{
 }
 
 /*******************************
+*   Footer
+*******************************/
+
+footer{
+    background-color: var(--secondary-color);
+}
+
+.footer-section, .footer-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link div{
+    margin-left: 35px;
+}
+
+.footer-link div p{
+    margin-bottom: 15px;
+}
+
+.footer-link div p:first-child{
+    margin-bottom: 25px;
+}
+
+/*******************************
 *   slideshow section
 *******************************/
 .slideshow-container{
