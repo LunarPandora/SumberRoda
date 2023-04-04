@@ -21,6 +21,10 @@
 .text-center{
     text-align: center;
 }
+
+.text-italic{
+    font-style: italic;
+}
 /* =================== */
 
 /* Fixed label classes */

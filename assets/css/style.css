@@ -76,7 +76,20 @@ ul{
 /*******************************
 *   Input
 *******************************/
+.form-group{
+    width: 100%;
+    padding: var(--a2) 0;
+}
+
+.form-group .form-label{
+    display: block;
+    font-weight: var(--fw-semibold);
+    margin-bottom: var(--a1);
+    font-size: var(--sm-text);
+}
+
 .form-control{
+    display: block;
     width: 100%;
     padding: var(--a2);
     background-color: rgba(0,0,0, .4);
@@ -439,7 +452,7 @@ main{
 *******************************/
 
 footer{
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
 }
 
 .footer-section, .footer-link{
@@ -458,6 +471,7 @@ footer{
 
 .footer-link div p:first-child{
     margin-bottom: 25px;
+    color: var(--primary-color);
 }
 
 /*******************************
@@ -666,4 +680,29 @@ footer{
 .detail-produk .detail-bottom .desc-content ul.list-style-none{
     list-style-type: none !important;
     padding-left: 0 !important;
+}
+
+/*******************************
+*   about us page
+*******************************/
+.about-us .about-desc{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about-us .about-desc .desc-title{
+    max-width: 60%;
+}
+
+.about-us .about-form{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about-location{
+    min-height: 300px;
+}
+
+.about-location .map{
+    aspect-ratio: auto 3/1;
 }

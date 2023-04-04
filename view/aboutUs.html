@@ -34,28 +34,90 @@
     </nav>
     
     <main class="main-content">
-        <div class="container">
-            <div class="flex flex-wrap">
+        <div class="container px-5 py-4">
+            <div class="flex flex-wrap about-us">
                 <div class="about-desc">
                     <div class="desc-title">
-                        <h1>Sumber Roda Pontianak</h1>
+                        <h1 class="text-5xl fw-black"><span class="text-5xl fw-black text-primary">Sumber Roda</span> Pontianak</h1>
                     </div>
-                    <div class="desc-subtitle">
-                        <h4>Semua kebutuhan mobilmu ada di sini.</h4>
+                    <div class="desc-subtitle my-3">
+                        <h4 class="text-italic fw-normal text-lg">Semua kebutuhan mobilmu ada di sini.</h4>
                     </div>
-                    <div class="desc-paragraph">
+                    <div class="desc-paragraph my-3">
                         <p>Sumber Roda Pontianak adalah mitra terpercaya dalam memenuhi segala kebutuhan mobil Anda dengan kualitas terbaik dan harga yang bersahabat. Dari koleksi velg keren hingga aki mobil yang berkualitas, kami selalu berinovasi untuk memberikan solusi terbaik bagi kendaraan Anda. Dengan pelayanan ramah dan profesional, kami memberikan pengalaman berbelanja yang menyenangkan dan memuaskan bagi setiap pelanggan kami.</p>
                     </div>
                     <div class="desc-media background">
                         <ul>
-                            <li><i class="fa fa-facebook"></i> Sumber Roda Pontianak</li>
-                            <li><i class="fa fa-instagram"></i> sumber_roda</li>
+                            <li><a href="#"><i class="fa fa-facebook"></i> Sumber Roda Pontianak</a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i> sumber_roda</a></li>
                         </ul>
                     </div>
                 </div>
+                
+                <div class="about-form">
+                    <form action="#">
+                        <h2 class="fw-semibold text-3xl my-2">Kontak Kami</h2>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="nama">Nama Anda</label>
+                            <input type="text" class="form-control" placeholder="Masukkan nama anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Anda</label>
+                            <input type="text" class="form-control" placeholder="Masukkan email anda">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="pesan">Pesan Anda</label>
+                            <textarea class="form-control" name="pesan" id="pesan" cols="30" rows="5" placeholder="Masukkan pesan anda"></textarea>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
+            <div class="about-location py-3">
+                <div class="map" id="map" data-longitude="109.3336" data-latitude="0"></div>
             </div>
         </div>
+        
+        <footer class="container-fluid">
+            <div class="footer-section py-4 mx-5">
+                <div>
+                    <h2 class="text-primary text-4xl" style="text-align: left">Sumber Roda <span class="text-white">Pontianak</span></h2>
+                    <p class="text-white"><i>Semua kebutuhan mobilmu ada di sini</i></p>
+                </div>
+                <div class="footer-link">
+                    <div>
+                        <p class="fw-bold text-lg primary-text">Link</p>
+                        <p><a>Beranda</a></p>
+                        <p><a>Produk</a></p>
+                        <p><a>Tentang Kami</a></p>
+                    </div>
+        
+                    <div>
+                        <p class="fw-bold text-lg primary-text">Media Sosial</p>
+                        <p><a>0811-1111-1111</a></p>
+                        <p><a>Sumber Roda Pontianak</a></p>
+                        <p><a>sumber_roda</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
-</body>
 
+</body>
+<script lang="js" async>
+    
+    window.onload = () => {
+        const map = document.querySelector('.map');
+        
+        mapGL({
+            container: map.id,
+            coordinate: {long: map.getAttribute('data-longitude'), lat: map.getAttribute('data-latitude')}
+        })
+    }
+    
+</script>
 </html>
