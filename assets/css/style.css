@@ -372,21 +372,17 @@ main{
 }
 
 .why-section-part h3{
-    padding: var(--a3) var(--a2);
+    padding: var(--a3) var(--a3) var(--a3) 0;
     font-size: var(--xl-text);
     font-weight: var(--fw-bold);
     color: var(--primary-color);
 }
 
-.why-section-part .separator{
-    border-left: 4px solid var(--white-color);
-}
-
 .why-section-part p{
-    font-size: var(--xs-text);
+    font-size: var(--md-text);
     font-weight: var(--fw-medium);
     color: var(--white-color);
-    padding: 0 var(--a2) var(--a5);
+    padding: 0 var(--a3) var(--a3) 0;
 }
 
 /*******************************

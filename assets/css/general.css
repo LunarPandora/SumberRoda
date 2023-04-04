@@ -27,6 +27,14 @@
 }
 /* =================== */
 
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: kllftf;
+}
+
 /* Fixed label classes */
 .label{
     padding: 4px;
