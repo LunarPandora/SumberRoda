@@ -1,6 +1,7 @@
 @import './variables/index.css';
 @import './icons.css';
 @import './general.css';
+@import './responsive.css';
 
 html{
     min-height: 100vh;
@@ -403,23 +404,44 @@ main{
 /*******************************
 *   why section
 *******************************/
+.why-section h2{
+    padding: 30px;
+}
+
+.why-section .content .flex{
+    justify-content: space-between;
+}
+
 .why-section .content .why-section-part{
-    max-width: 50%;
-    flex: 1 1 50%;
+    flex: 1;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    margin-right: 15px;
+    border-radius: 7px;
+}
+
+.why-section .content .why-section-part:last-child{
+    margin-right: 0px;
+}
+
+.why-section-part i{
+    padding: 15px;
 }
 
 .why-section-part h3{
-    padding: var(--a3) var(--a3) var(--a3) 0;
     font-size: var(--xl-text);
     font-weight: var(--fw-bold);
     color: var(--primary-color);
+    padding: 0 15px 15px 15px;
+    text-align: left;
 }
 
 .why-section-part p{
-    font-size: var(--md-text);
-    font-weight: var(--fw-medium);
+    font-size: var(--sm-text);
+    font-weight: var(--fw-normal);
     color: var(--white-color);
-    padding: 0 var(--a3) var(--a3) 0;
+    padding: 15px;
+    text-align: justify;
 }
 
 /*******************************

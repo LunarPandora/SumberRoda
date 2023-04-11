@@ -61,6 +61,8 @@
 
     .why-section-part{
         margin: 10px 0 !important;
+        width: 100% !important;
+        max-width: none !important;
     }
 
     .operational-hours .flex.flex-wrap{
