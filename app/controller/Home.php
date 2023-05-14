@@ -6,5 +6,6 @@ class Home extends Controller{
     {
         var_dump($_SERVER['HTTP_HOST']);
         $this->view('home/index');
+        echo "Home/index";
     }
 }
