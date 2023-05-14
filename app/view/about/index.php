@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h5>Coba</h5>
+    <h1>Ini file about/index <?= $data['nama'] ?></h1>
 </body>
 </html>

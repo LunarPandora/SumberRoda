@@ -1,12 +1,19 @@
 <?php
 
-class About{
-    public function index($laptop = "", $charger = 0){
-        // $this->view('home/index');
-        echo "pada perusahaan about, di kegiatan index. Ternyata kekurangan laptop dan charger, maka perusahaan App mengirimkan $laptop laptop dan $charger charger.";
+class About extends Controller{
+    public function index($nama = "Joe", $umur = 32, $pekerjaan = 'programmer'){
+        $this->view('template/header');
+        
+        $data = [
+            'nama' => $nama,
+            'umur' => $umur,
+            'pekerjaan' => $pekerjaan,
+        ];
+        
+        $this->view('about/index', $data);
     }
     
     public function page(){
-        echo 'About/page';
+        $this->view('about/page');
     }
 }
