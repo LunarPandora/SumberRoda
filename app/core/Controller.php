@@ -1,8 +1,7 @@
 <?php
-namespace App\Core;
 
 class Controller{
     public function view($view, $data = []){
-        return 'coba';
-    }
+        require_once "../app/view/$view.php";
+    }  
 }

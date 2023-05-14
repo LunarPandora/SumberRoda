@@ -1,10 +1,8 @@
 <?php
-namespace Controller;
-require '../app/core/Controller.php';
-use App\Core\Controller;
 
-class Home extends Controller{
+class Home extends Contro{
     public function index(){
         $this->view('home/index');
+        echo "Home/index";
     }
 }

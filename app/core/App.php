@@ -2,7 +2,7 @@
 
 class App{
     protected $url = '';
-    protected $controller = 'Home';
+    protected $controller = 'Home'; // udah jadi about
     protected $method = 'index';
     protected $params = [];
     
@@ -19,6 +19,7 @@ class App{
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
+
             return $url;
         }
     }
