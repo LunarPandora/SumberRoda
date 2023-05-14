@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php $this->view('template/header'); ?>
     <h5>Coba</h5>
 </body>
 </html>
