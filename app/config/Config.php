@@ -6,7 +6,7 @@ class Config{
         $base_url = "http://";
         if(isset($_SERVER['HTTP_HOST'])) {
             if(isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off"){
-                return "https://sumberroda.000webhostapp.com/assets";
+                return "https://sumberroda.000webhostapp.com/";
             }
         }
         
