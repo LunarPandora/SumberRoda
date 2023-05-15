@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="https://sumberroda.000webhostapp.com/assets/css/general.css"> -->
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/general.css">
 </head>
 <body>
     <?php $this->view('template/header'); ?>
