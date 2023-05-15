@@ -14,14 +14,13 @@ class Config{
         $tmpURL = ltrim($tmpURL, '/');
         $tmpURL = rtrim($tmpURL, '/');
         
+        
         if(strpos($tmpURL, '/')){
             $tmpURL = explode('/', $tmpURL);
             $tmpURL = $tmpURL[0];
         }
         
-        if ($tmpURL !== $_SERVER['HTTP_HOST']){
-            $base_url .= "$_SERVER[HTTP_HOST]/$tmpURL/";
-        }
+        $base_url .= "$tmpURL/";
         
         return $base_url;
     }
