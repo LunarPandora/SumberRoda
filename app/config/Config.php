@@ -5,7 +5,9 @@ class Config{
     public function base_url(){
         $base_url = "http://";
         if(isset($_SERVER['HTTP_HOST'])) {
-            $base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off" ? "https://" : "http://";
+            if(isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off"){
+                return "https://sumberroda.000webhostapp.com/assets";
+            }
         }
         
         $tmpURL = dirname(__FILE__);
@@ -14,13 +16,14 @@ class Config{
         $tmpURL = ltrim($tmpURL, '/');
         $tmpURL = rtrim($tmpURL, '/');
         
-        
         if(strpos($tmpURL, '/')){
             $tmpURL = explode('/', $tmpURL);
             $tmpURL = $tmpURL[0];
         }
         
-        $base_url .= "$tmpURL/";
+        if ($tmpURL !== $_SERVER['HTTP_HOST']){
+            $base_url .= "$_SERVER[HTTP_HOST]/$tmpURL/";
+        }
         
         return $base_url;
     }
