@@ -8,7 +8,7 @@
 </head>
 <body>
     <h5 class="list-style-none">Coba</h5>
-    <img src="/assets/img/aki.png" alt="">
+    <!-- <img src="/assets/img/aki.png" alt=""> -->
     <a href="/dashboard">Klik sini</a>
 </body>
 </html>
