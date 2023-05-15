@@ -8,20 +8,20 @@ class Config{
             $base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off" ? "https://" : "http://";
         }
         
-        // $tmpURL = dirname(__FILE__);
-        // $tmpURL = str_replace(chr(92),'/',$tmpURL);
-        // $tmpURL = str_replace($_SERVER['DOCUMENT_ROOT'],'',$tmpURL);
-        // $tmpURL = ltrim($tmpURL, '/');
-        // $tmpURL = rtrim($tmpURL, '/');
+        $tmpURL = dirname(__FILE__);
+        $tmpURL = str_replace(chr(92),'/',$tmpURL);
+        $tmpURL = str_replace($_SERVER['DOCUMENT_ROOT'],'',$tmpURL);
+        $tmpURL = ltrim($tmpURL, '/');
+        $tmpURL = rtrim($tmpURL, '/');
         
-        // if(strpos($tmpURL, '/')){
-        //     $tmpURL = explode('/', $tmpURL);
-        //     $tmpURL = $tmpURL[0];
-        // }
+        if(strpos($tmpURL, '/')){
+            $tmpURL = explode('/', $tmpURL);
+            $tmpURL = $tmpURL[0];
+        }
         
-        // if ($tmpURL !== $_SERVER['HTTP_HOST']){
-            $base_url .= "$_SERVER[HTTP_HOST]/";
-        // }
+        if ($tmpURL !== $_SERVER['HTTP_HOST']){
+            $base_url .= "$_SERVER[HTTP_HOST]/$tmpURL/";
+        }
         
         return $base_url;
     }
