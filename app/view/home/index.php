@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/general.css">
 </head>
 <body>
-    <?php $this->view('template/header'); ?>
-    <h5>Coba</h5>
+    <h5 class="list-style-none">Coba</h5>
     <a href="<?= BASE_URL; ?>dashboard">Klik sini</a>
 </body>
 </html>
