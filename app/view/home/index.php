@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h5>Coba</h5>
+    <h5 class="list-style-none">Coba</h5>
+    <a href="<?= BASE_URL ?>dashboard">Klik sini</a>
 </body>
 </html>
