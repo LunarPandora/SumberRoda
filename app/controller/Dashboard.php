@@ -2,7 +2,11 @@
 
 class Dashboard extends Controller{
     public function index(){
-        $this->view('dashboard/index');
-        echo "dashboard/index";
+        $data=[ 
+            "nama" => "suhendri",
+            "kelas" => "STI-B"
+        ];
+        $this->view('dashboard/index', $data) ;
+        
     }
 }
