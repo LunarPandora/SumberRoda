@@ -61,9 +61,8 @@
             </div>
         </div>
     </div>
-
-
-
+    
+    <?php $this->view('template/admin/script'); ?>
 </body>
 
 </html>
