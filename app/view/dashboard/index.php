@@ -9,13 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Aplikasi Database STI A :: Dashboard</title>
+    <title>Aplikasi Database STI A :: Dashboard
+
+    </title>
 
 <?php $this->view('template/admin/style'); ?>
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -25,16 +26,16 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+             <div id="content">
 
                 <?php $this->view('template/admin/menu_top'); ?>
-
+                
             </div>
             <!-- End of Main Content -->
             <?php $this->view('template/admin/footer'); ?>
         </div>
         <!-- End of Content Wrapper -->
-
+        
     </div>
     <!-- End of Page Wrapper -->
 
@@ -61,8 +62,9 @@
             </div>
         </div>
     </div>
-    
-    <?php $this->view('template/admin/script'); ?>
+
+
+    <?php $this->view('template/admin/script')?> 
 </body>
 
 </html>
