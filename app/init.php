@@ -2,6 +2,7 @@
 
 require "config/Config.php";
 require "config/DatabaseAccount.php";
+require "config/Auth.php";
 
 require "core/App.php";
 require "core/Database.php";

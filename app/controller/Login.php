@@ -23,4 +23,9 @@ class Login extends Controller{
         
         Auth::setUser($data);
     }
+    
+    public function logout()
+    {
+        Auth::logout();
+    }
 }
