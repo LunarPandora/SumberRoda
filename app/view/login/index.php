@@ -7,20 +7,15 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="post" action="error.php" id="form-login">
+    <form method="post" action="<?= BASE_URL ?>login/tryAuthenticate" id="form-login">
         <div class="form-group">
-            <label class="form-label" for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <label class="form-label" for="email">email</label>
+            <input type="email" name="user_email" id="user_email" required>
         </div>    
     
         <div class="form-group">
             <label class="form-label" for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>
-        
-        <div class="form-group">
-            <label class="form-label" for="confirm_password">Confirm password</label>
-            <input type="password" name="confirm_password" id="confirm_password">
+            <input type="password" name="password" id="password" required>
         </div>
         
         <div class="form-group">
@@ -28,33 +23,12 @@
         </div>
     </form>
     
-<script>
-    const form = document.getElementById('form-login');
-    
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-        
-        const password = document.getElementById('password');
-        const confirm_password = document.getElementById('confirm_password');
-        
-        if(password.value != confirm_password.value){
-            alert('Password unmatched');
-            return 0;
+    <?php 
+        if(isset($_SESSION['error'])){
+            echo $_SESSION['error'];
+            unset($_SESSION['error']);
         }
-        
-        const xhr = XMLHttpRequest();
-        xhr.open('POST', '', true);
-        
-        
-        xhr.onload = function () {
-            var status = xhr.status;
-            if (status == 200) {
-                alert('berhasil ditambah data');
-            } else {
-                alert('')
-            }
-        };
-    })
-</script>
+    ?>
+    
 </body>
 </html>
