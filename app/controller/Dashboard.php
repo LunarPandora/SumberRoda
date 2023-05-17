@@ -6,6 +6,8 @@ class Dashboard extends Controller{
             "nama" => "suhendri",
             "kelas" => "STI-B"
         ];
+        
+        echo $_SERVER['SCRIPT_NAME'];
         $this->view('dashboard/index', $data) ;
         
     }
