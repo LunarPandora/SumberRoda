@@ -8,7 +8,7 @@ class Config{
             $base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off" ? "https://" : "http://";
         }
         
-        return "$base_url{$_SERVER['HTTP_HOST']}/";
+        return "$base_url{$_SERVER['HTTP_HOST']}";
         
         $tmpURL = dirname(__FILE__);
         $tmpURL = str_replace(chr(92),'/',$tmpURL);
