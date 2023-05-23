@@ -9,7 +9,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@php_mvc
+        uses: actions/checkout@main
         
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
