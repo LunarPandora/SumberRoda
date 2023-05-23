@@ -4,7 +4,7 @@ class Database{
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
-    private $db_name = DB_NAME;
+    public $db_name = DB_NAME;
     
     private $dbh;
     private $stmt;
@@ -23,6 +23,14 @@ class Database{
             die($e->getMessage());
         }
     }
+    
+    //$conn =  new PDO($dbcfg, $this->user, $this->pass, $options);
+    //$sql = $conn->prepare("SELECT * FROM user");
+    //$conn->execute();
+    
+    //$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+    //$sql = "SELECT * FROM user";
+    //mysqli_query($conn, $sql);
     
     public function query($query)
     {
