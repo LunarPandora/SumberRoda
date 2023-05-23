@@ -11,18 +11,18 @@ class Login extends Controller{
         $this->view('login/index');
     }
     
-    public function tryAuthenticate()
+    public function tryAuthenticate($data)
     {
-        $data = $this->model('user_model')->login($_POST);
+        $data = $this->model('User_model')->login($data);
         if(!$data){
             $_SESSION['error'] = "Gagal login, silahkan menggunakan email atau password yang berbeda";
-            header("location:". BASE_URL . "login");
+            header("location:". BASE_URL . "/view/login");
             
             return 0;
         }
         
         Auth::setUser($data);
-        header("location:". BASE_URL . "dashboard");
+        header("location:". BASE_URL . "/view/dashboard");
     }
     
     public function logout()
