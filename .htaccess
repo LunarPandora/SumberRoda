@@ -1,3 +1,2 @@
 RewriteEngine on
 RewriteRule ^$ public_html/ [L]
-RewriteRule (.*) public_html/$1 [L]
