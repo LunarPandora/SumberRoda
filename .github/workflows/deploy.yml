@@ -19,4 +19,4 @@ jobs:
           password: 4MuE4m&1go2&e4(16^vY
           protocol: ftp
           port: 21
-          timeout: 30000
+          timeout: 60000
