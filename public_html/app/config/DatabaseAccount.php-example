@@ -1,0 +1,9 @@
+<?php
+namespace App;
+
+class DatabaseAccount{
+    public $db_host = 'localhost'; // Host dari DB
+    public $db_user = 'root'; // nama user
+    public $db_pass = ''; //password dari dbms
+    public $db_name = 'nama_database'; //nama database
+}

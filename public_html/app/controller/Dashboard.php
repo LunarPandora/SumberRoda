@@ -12,7 +12,7 @@ class Dashboard extends Controller{
             "kelas" => "STI-B"
         ];
         
-        echo $_SERVER['SCRIPT_NAME'];
+        echo "dashboard";
         $this->view('dashboard/index', $data) ;
         
     }
