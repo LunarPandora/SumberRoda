@@ -1,0 +1,114 @@
+:root{
+    --xxs-text: 0.75rem;
+    --xs-text: 0.875rem;
+    --sm-text: 1rem;
+    --md-text: 1.125rem;
+    --lg-text: 1.25rem;
+    --xl-text: 1.5rem;
+    --xxl-text: 1.75rem;
+    --title-text: 2rem;
+    --giant-text: 2.5rem;
+    --x-giant-text: 3rem;
+    
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins Light";
+    src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: "Poppins Bold";
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+.text-2xs{
+    font-size: var(--xxs-text);
+}
+
+.text-xs{
+    font-size: var(--xs-text);
+}
+
+.text-sm{
+    font-size: var(--sm-text);
+}
+
+.text-md{
+    font-size: var(--md-text);
+}
+
+.text-lg{
+    font-size: var(--lg-text);
+}
+
+.text-xl{
+    font-size: var(--xl-text);
+}
+
+.text-2xl{
+    font-size: var(--xxl-text);
+}
+
+.text-3xl{
+    font-size: var(--title-text);
+}
+
+.text-4xl{
+    font-size: var(--giant-text);
+}
+
+.text-5xl{
+    font-size: var(--x-giant-text);
+}
+
+.fw-thin{
+    font-weight: var(--fw-thin);
+}
+
+.fw-extralight{
+    font-weight: var(--fw-extralight);
+}
+
+.fw-light{
+    font-weight: var(--fw-light);
+}
+
+.fw-normal{
+    font-weight: var(--fw-normal);
+}
+
+.fw-medium{
+    font-weight: var(--fw-medium);
+}
+
+.fw-semibold{
+    font-family: 'Poppins', sans-serif;
+    font-weight: var(--fw-semibold);
+}
+
+.fw-bold{
+    font-weight: var(--fw-bold);
+}
+
+.fw-extrabold{
+    font-weight: var(--fw-extrabold);
+}
+
+.fw-black{
+    font-weight: var(--fw-black);
+}

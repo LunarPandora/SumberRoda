@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - master
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: files.000webhost.com
+          username: sumberroda
+          password: 4MuE4m&1go2&e4(16^vY
+          protocol: ftp
+          port: 21
+          timeout: 1200000
