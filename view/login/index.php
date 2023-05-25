@@ -1,9 +1,9 @@
 <?php
 require '../../app/init.php';
 
-$login = new Login;
+$page = new Login;
 if(isset($_POST['login'])){
-    $success = $login->tryAuthenticate($_POST);
+    $success = $page->tryAuthenticate($_POST);
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ if(isset($_POST['login'])){
     <?php 
         if(isset($_SESSION['error'])){
             echo $_SESSION['error'];
-            // unset($_SESSION['error']);
+            unset($_SESSION['error']);
         }
     ?>
     
