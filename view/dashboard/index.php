@@ -1,3 +1,9 @@
+<?php
+require '../../app/init.php';
+
+$page = new Dashboard;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +18,14 @@
 
     </title>
 
-<?php $this->view('template/admin/style'); ?>
+<?php $page->view('template/admin/style'); ?>
 </head>
 
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php $this->view('template/admin/menu'); ?>
+        <?php $page->view('template/admin/menu'); ?>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -27,11 +33,11 @@
             <!-- Main Content -->
              <div id="content">
 
-                <?php $this->view('template/admin/menu_top'); ?>
+                <?php $page->view('template/admin/menu_top'); ?>
                 
             </div>
             <!-- End of Main Content -->
-            <?php $this->view('template/admin/footer'); ?>
+            <?php $page->view('template/admin/footer'); ?>
         </div>
         <!-- End of Content Wrapper -->
         
@@ -63,7 +69,7 @@
     </div>
 
 
-    <?php $this->view('template/admin/script')?> 
+    <?php $page->view('template/admin/script')?> 
 </body>
 
 </html>

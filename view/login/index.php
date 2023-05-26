@@ -1,3 +1,11 @@
+<?php
+require '../../app/init.php';
+
+$page = new Login;
+if(isset($_POST['login'])){
+    $success = $page->tryAuthenticate($_POST);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +15,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form method="post" action="<?= BASE_URL ?>login/tryAuthenticate" id="form-login">
+    <form method="post" action="" id="form-login">
         <div class="form-group">
             <label class="form-label" for="email">email</label>
             <input type="email" name="user_email" id="user_email" required>
@@ -19,7 +27,7 @@
         </div>
         
         <div class="form-group">
-            <input type="submit" value="save">
+            <input type="submit" name="login" value="save">
         </div>
     </form>
     

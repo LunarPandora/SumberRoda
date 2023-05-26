@@ -8,7 +8,11 @@ class Migration{
     {
         $this->db = new Database;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
     public function exec()
     {
         //tiap kali mau buat tabel
@@ -28,6 +32,7 @@ class Migration{
             echo "Berhasil menambahkan table master_kategori";
         }
     }
+<<<<<<< HEAD
 //ingat
 // n1. sebuah logika yang digunakan untuk mengecek apakah table yang mau dimasukan datanya, ada atau tidak. 
 // n2. sebuah logika apakah setelah tablenya exist, apakah data ditabel tersebut itu ada atau ndk(exist).
@@ -53,6 +58,13 @@ public function seeder()
     public function isExistTable($nama_tabel)
     {
         $this->db->query("SHOW TABLES LIKE '{$nama_tabel}'");
+=======
+    
+    public function isExistTable($nama_tabel)
+    {
+        $this->db->query("SHOW TABLES LIKE '{$nama_tabel}'");
+        $this->db->execute();
+>>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
         $check = $this->db->single();
         
         if($check){
