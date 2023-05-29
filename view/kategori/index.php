@@ -34,7 +34,7 @@ $page= new Kategori;
             <!-- Main Content -->
             <div id="content">
 
-                <?= $page->view("template/admin/menu-top"); ?>
+                <?= $page->view("template/admin/menu_top"); ?>
                 <table class="responsive-datatable">
                     <thead>
                         <tr>nomor</tr>
