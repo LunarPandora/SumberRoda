@@ -2,10 +2,14 @@ on:
   push:
     branches:
 <<<<<<< HEAD
+<<<<<<< HEAD
       - php_mvc
 =======
       - master
 >>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
+=======
+      - master
+>>>>>>> 38177adf166227cd8657d583aa1d15d2474df1f2
     
 jobs:
   deploy:
@@ -24,6 +28,10 @@ jobs:
           protocol: ftp
           port: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
           timeout: 60000
 =======
 >>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
+=======
+          timeout: 30000
+>>>>>>> 38177adf166227cd8657d583aa1d15d2474df1f2
