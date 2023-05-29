@@ -8,17 +8,14 @@ class Migration{
     {
         $this->db = new Database;
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
     public function exec()
     {
         //tiap kali mau buat tabel
         if(!$this->isExistTable('user'))
         {
-            $this->db->query("CREATE TABLE 'sumberroda'.'master_kategori' (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(50) NOT NULL, `email` VARCHAR(100) NOT NULL , `password` VARCHAR(100) NOT NULL , `created_at` TIMESTAMP NOT NULL CURRENT_TIMESTAMP, `created_at` TIMESTAMP NOT NULL , PRIMARY KEY (`id`))");
+            $this->db->query("CREATE TABLE `sumberroda`.`user` (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(50) NOT NULL, `email` VARCHAR(100) NOT NULL , `password` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`))");
+            $this->db->execute();
             
             echo "Berhasil menambahkan tabel user";
         }
@@ -32,39 +29,10 @@ class Migration{
             echo "Berhasil menambahkan table master_kategori";
         }
     }
-<<<<<<< HEAD
-//ingat
-// n1. sebuah logika yang digunakan untuk mengecek apakah table yang mau dimasukan datanya, ada atau tidak. 
-// n2. sebuah logika apakah setelah tablenya exist, apakah data ditabel tersebut itu ada atau ndk(exist).
-// n3. jika tidak exist maka insert data tersebut ke dalam tabel yang dicek exist.
-    
-//n1
-public function seeder()
-    {
-        $tabel = "user";
-        if($this->isExistTable($tabel)) {
-            $check = $this->db->single();
-            echo "Table ditemukan!";
-            
-                if($this->isExistTable($tabel)) {
-                        "Data sudah ada di dalam tabel.";
-                    } else {
-                        $this->db->query("INSERT INTO $tabel()");
-                    }
-    }
-}
-
 
     public function isExistTable($nama_tabel)
     {
         $this->db->query("SHOW TABLES LIKE '{$nama_tabel}'");
-=======
-    
-    public function isExistTable($nama_tabel)
-    {
-        $this->db->query("SHOW TABLES LIKE '{$nama_tabel}'");
-        $this->db->execute();
->>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
         $check = $this->db->single();
         
         if($check){
