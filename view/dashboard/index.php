@@ -14,9 +14,7 @@ $page = new Dashboard;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Aplikasi Database STI A :: Dashboard
-
-    </title>
+    <title>Dashboard - Sumber Roda</title>
 
 <?php $page->view('template/admin/style'); ?>
 </head>
@@ -32,9 +30,39 @@ $page = new Dashboard;
 
             <!-- Main Content -->
              <div id="content">
-
                 <?php $page->view('template/admin/menu_top'); ?>
                 
+                <div class="container p-md-3 p-2">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12 px-md-1 py-md-1 ">
+                            <div class="card p-0 bg-primary">
+                                <div class="card-body">
+                                    <h5 class="text-white fw-bold">Jumlah Kategori</h5>
+                                    <h5 class="text-white">32</h5>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 col-12 px-md-1 py-md-1 ">
+                            <div class="card p-0 bg-primary">
+                                <div class="card-body">
+                                    <h5 class="text-white fw-bold">Jumlah Produk</h5>
+                                    <h5 class="text-white">32</h5>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 col-12 px-md-1 py-md-1 ">
+                            <div class="card p-0 bg-primary">
+                                <div class="card-body">
+                                    <h5 class="text-white fw-bold">Jumlah Invoice</h5>
+                                    <h5 class="text-white">32</h5>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             <!-- End of Main Content -->
             <?php $page->view('template/admin/footer'); ?>
@@ -44,32 +72,7 @@ $page = new Dashboard;
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="./themes/login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <?php $page->view('template/admin/script')?> 
+    <?php $page->view('template/admin/script')?>
 </body>
 
 </html>

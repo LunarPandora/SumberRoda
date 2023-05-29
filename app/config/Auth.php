@@ -21,5 +21,7 @@ class Auth{
     public static function logout()
     {
         unset($_SESSION['user']);
+        
+        header('location: '. BASE_URL. '/view/login');
     }
 }

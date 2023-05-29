@@ -5,5 +5,8 @@
 <!-- Custom styles for this template-->
 <link href="<?= BASE_URL; ?>assets/themes/css/sb-admin-2.min.css" rel="stylesheet">
 
+<!-- Custom styles for this template-->
+<link href="<?= BASE_URL; ?>assets/css/admin-style.css" rel="stylesheet">
+
 <!-- Custom styles for this page -->
 <link href="<?= BASE_URL; ?>assets/themes/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">

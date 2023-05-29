@@ -1,3 +1,8 @@
+<?php
+    if(isset($_POST['logout'])){
+        Auth::logout();
+    }
+?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
@@ -34,7 +39,8 @@
         <div id="masterData" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="index.php?menu=kategori">Kategori</a>
-                <a class="collapse-item" href="index.php?menu=produk">Produk</a>
+                <a class="collapse-item" href="<?= BASE_URL ?>/view/merek_produk">Merek produk</a>
+                <a class="collapse-item" href="<?= BASE_URL ?>/view/produk">Produk</a>
             </div>
         </div>
     </li>
@@ -63,7 +69,22 @@
     <li class="nav-item">
         <a class="nav-link" href="index.php?menu=laporan">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Laporan</span></a>
+            <span>Laporan</span>
+        </a>
     </li>
+    
+    <!-- Divider -->
+    <hr class="sidebar-divider" />
+
+    <!-- Heading -->
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <form action="" method="POST" class="nav-link bg-dark">
+            <i class="fas fa-fw fa-power-off"></i>
+            <input class="bg-dark text-white sidebar-dark border-0" type="submit" name="logout" value="Logout">
+        </form>
+    </li>
+    
 </ul>
 <!-- End of Sidebar -->

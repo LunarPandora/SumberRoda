@@ -27,6 +27,15 @@ class Migration{
             
             echo "Berhasil menambahkan table master_kategori";
         }
+        
+        if(!$this->isExistTable('merek_produk'))
+        {
+            $this->db->query("CREATE TABLE `sumberroda`.`merek_produk` (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`))");
+        
+            $this->db->execute();
+            
+            echo "Berhasil menambahkan table merek_produk";
+        }
     }
     
     public function isExistTable($nama_tabel)
