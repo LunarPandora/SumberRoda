@@ -7,3 +7,4 @@ require 'Home.php';
 require 'Migrate.php';
 require 'Produk.php';
 require 'MerekProduk.php';
+require 'Kategori.php';

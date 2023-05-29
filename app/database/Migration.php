@@ -8,13 +8,14 @@ class Migration{
     {
         $this->db = new Database;
     }
-    
+
     public function exec()
     {
         //tiap kali mau buat tabel
         if(!$this->isExistTable('user'))
         {
-            $this->db->query("CREATE TABLE 'sumberroda'.'master_kategori' (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(50) NOT NULL, `email` VARCHAR(100) NOT NULL , `password` VARCHAR(100) NOT NULL , `created_at` TIMESTAMP NOT NULL CURRENT_TIMESTAMP, `created_at` TIMESTAMP NOT NULL , PRIMARY KEY (`id`))");
+            $this->db->query("CREATE TABLE `sumberroda`.`user` (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(50) NOT NULL, `email` VARCHAR(100) NOT NULL , `password` VARCHAR(100) NOT NULL, PRIMARY KEY (`id`))");
+            $this->db->execute();
             
             echo "Berhasil menambahkan tabel user";
         }
@@ -37,11 +38,10 @@ class Migration{
             echo "Berhasil menambahkan table merek_produk";
         }
     }
-    
+
     public function isExistTable($nama_tabel)
     {
         $this->db->query("SHOW TABLES LIKE '{$nama_tabel}'");
-        $this->db->execute();
         $check = $this->db->single();
         
         if($check){
@@ -51,3 +51,4 @@ class Migration{
         return false;
     }
 }
+
