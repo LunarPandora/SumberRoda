@@ -2,13 +2,25 @@
 require '../../app/init.php';
 
 $page = new MerekProduk;
-$result = '';
+$dataEdit = [];
 
 
 if(isset($_POST['action'])){
     if($_POST['action'] == "add"){
         $result = $page->addData();
+    }else{
+        $result = $page->updateData();
     }
+    header('location:'.BASE_URL.'/view/merek_produk');
+}
+
+if(isset($_POST['edit'])){
+    $dataEdit = $page->getData();
+}
+
+if(isset($_POST['delete'])){
+    $page->deleteData();
+    header('location:'.BASE_URL.'/view/merek_produk');
 }
 ?>
 <!DOCTYPE html>
@@ -63,27 +75,33 @@ if(isset($_POST['action'])){
                                         <tr>
                                             <th width="10">No</th>
                                             <th>Nama Merek</th>
-                                            <th>Action</th>
+                                            <th width="50">Action</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        while($row = $page->getAllData())
+                                        foreach($page->getAllData() as $row)
                                         {
                                             $id = $row['id'];
                                         ?>
                                             <tr>
                                                 <td><?= $i; ?></td>
                                                 <td><?= $row['nama']; ?></td>
-                                                <td>
-                                                    <button class="btn btn-warning" onclick="edit(<?= $id; ?>)">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button class="btn btn-danger" onclick="remove(<?= $id; ?>)">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
+                                                <td class="d-flex gap-1 p-1">
+                                                    <form id="edit-form" method="post">
+                                                        <input type="hidden" name="id" value="<?= $id; ?>">
+                                                        <button type="submit" name="edit" class="btn btn-warning">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                    </form>
+                                                    <form id="delete-form" method="post">
+                                                        <input type="hidden" name="id" value="<?= $id; ?>">
+                                                        <button type="submit" name="delete" class="btn btn-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         <?php
@@ -110,19 +128,20 @@ if(isset($_POST['action'])){
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalTitle">Tambah Data</h5>
-                    <button class="close" onclick="unsetAction('<?= $_SERVER['PHP_SELF']; ?>')" type="button" data-dismiss="modal" aria-label="Close">
+                    <button class="close" onclick="closeModal(`<?= $_SERVER['PHP_SELF']; ?>`)" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form id="form-data" method="post">
+                        <input type="hidden" id="id" name="id">
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
                             <input type="text" id="nama" name="nama" class="form-control">
                         </div>
                         
                         <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-secondary" type="button" onclick="closeModal(`<?= $_SERVER['PHP_SELF']; ?>`)" data-dismiss="modal">Batal</button>
                             <button type="submit" id="btnAction" name="action" class="btn btn-primary" value="add">Tambah</button>
                         </div>
                     </form>
@@ -133,26 +152,32 @@ if(isset($_POST['action'])){
 
 <?php $page->view('template/admin/script')?>
 <script>
+    $(document).ready(() => {
+        const data = (`<?= json_encode($dataEdit) ?>`) ? `<?= json_encode($dataEdit) ?>` : {};
+        var dataEdit = JSON.parse(data);
+        
+        if(!checkEmptyObject(dataEdit)){
+            assignData(dataEdit);
+        }
+    })
+    
+    const assignData = (data) => {
+        $('#id').val(data.id);
+        $('#nama').val(data.nama);
+        $('#btnAction').val('edit');
+        $('#btnAction').text('Ubah');
+        $('#btnAction').removeClass('btn-primary').addClass('btn-warning');
+        openForm();
+    }
+    
+    const checkEmptyObject = (data) => {
+        for(i in data) return false;
+        return true;
+    }
     
     function openForm(){
         $('#form-modal').modal('show');
     }
-    
-    // $("#form-data").submit(async (e)=> {
-    //     e.preventDefault();
-        
-    //     const btnAction = $("#btnAction").val();
-    //     const dataForm = new FormData($(`#form-data`)[0]);
-        
-    //     if(btnAction == "add"){
-    //         const coba = await ``;
-    //         console.log(coba);
-    //     }else{
-            
-    //     }
-    // })
-
-
 </script>
     
 </body>
