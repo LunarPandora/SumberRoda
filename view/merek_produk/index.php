@@ -4,6 +4,7 @@ require '../../app/init.php';
 $page = new MerekProduk;
 $result = '';
 
+
 if(isset($_POST['action'])){
     if($_POST['action'] == "add"){
         $result = $page->addData();
@@ -150,8 +151,10 @@ if(isset($_POST['action'])){
             
     //     }
     // })
-</script>
 
+
+</script>
+    
 </body>
 
 </html>

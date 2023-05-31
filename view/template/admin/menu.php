@@ -38,7 +38,7 @@
         </a>
         <div id="masterData" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="index.php?menu=kategori">Kategori</a>
+                <a class="collapse-item" href="<?= BASE_URL ?>/view/kategori">Kategori</a>
                 <a class="collapse-item" href="<?= BASE_URL ?>/view/merek_produk">Merek produk</a>
                 <a class="collapse-item" href="<?= BASE_URL ?>/view/produk">Produk</a>
             </div>
