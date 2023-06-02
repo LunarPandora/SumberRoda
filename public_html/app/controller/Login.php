@@ -13,7 +13,7 @@ class Login extends Controller{
     
     public function tryAuthenticate()
     {
-        $data = $this->model('user_model')->login($_POST);
+        $data = $this->model('User_model')->login($_POST);
         if(!$data){
             $_SESSION['error'] = "Gagal login, silahkan menggunakan email atau password yang berbeda";
             header("location:". BASE_URL . "/view/login");

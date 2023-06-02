@@ -6,8 +6,11 @@ class Controller{
     }
     
     public function model($model){
-        var_dump($_SERVER['SCRIPT_NAME']);
-        require_once "../../app/model/$model.php";
+        if(isset($_SERVER['HTTPS'])){
+            require "/storage/ssd4/802/20555802/public_html/app/model/$model.php";
+        }else{
+            require_once "../../app/model/$model.php";
+        }
         
         return new $model;
     }
