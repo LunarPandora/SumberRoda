@@ -5,6 +5,7 @@ $page = new Login;
 if(isset($_POST['login'])){
     $success = $page->tryAuthenticate($_POST);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
