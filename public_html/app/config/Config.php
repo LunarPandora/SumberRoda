@@ -3,10 +3,10 @@ namespace App;
 
 class Config{
     public function base_url(){
-        $base_url = "http://sumberroda.000webhost.app.com";
-        if(isset($_SERVER['HTTP_HOST'])) {
-            $base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off" ? "https://" : "http://";
+        if(isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off"){
+            return "https://sumberroda.000webhostapp.com/";
         }
+        $base_url = "http://";
         
         $tmpURL = dirname(__FILE__);
         $tmpURL = str_replace(chr(92),'/',$tmpURL);
