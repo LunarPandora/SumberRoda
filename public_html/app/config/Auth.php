@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Auth{
     
@@ -24,7 +25,7 @@ class Auth{
         unset($_SESSION['user']);
         
         if(isset($_SERVER['HTTPS'])){
-            header('location: /storage/ssd4/802/20555802/public_html/view/login');
+            header('location: ../login');
         }else{
             header('location: '. BASE_URL . '/view/login');
         }
