@@ -6,8 +6,8 @@ class Auth{
     {
         foreach($data as $key => $value){
             $_SESSION['user'][$key] = $value;
-            echo $_SESSION['user'][$key];
         }
+        var_dump($_SESSION);
     }
     
     public static function user()
