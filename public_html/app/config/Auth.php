@@ -6,6 +6,7 @@ class Auth{
     {
         foreach($data as $key => $value){
             $_SESSION['user'][$key] = $value;
+            echo $_SESSION['user'][$key];
         }
     }
     
