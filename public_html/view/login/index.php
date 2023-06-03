@@ -1,15 +1,14 @@
 <?php
 if(isset($_SERVER['HTTPS'])){
-    require '/storage/ssd4/802/20555802/public_html/app/init.php';
+    require "/storage/ssd4/802/20555802/public_html/app/init.php";
 }else{
-    require '../../app/init.php';
+    require_once "../../app/init.php";
 }
 
 $page = new Login;
 if(isset($_POST['login'])){
     $success = $page->tryAuthenticate($_POST);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

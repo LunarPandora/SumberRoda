@@ -6,7 +6,10 @@ class Config{
         if(isset($_SERVER['HTTPS'])){
             return "https://sumberroda.000webhostapp.com/";
         }
-        $base_url = "http://";
+        
+        if(isset($_SERVER['HTTP_HOST'])) {
+            $base_url = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off" ? "https://" : "http://";
+        }
         
         $tmpURL = dirname(__FILE__);
         $tmpURL = str_replace(chr(92),'/',$tmpURL);

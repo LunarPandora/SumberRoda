@@ -2,7 +2,11 @@
 
 class Controller{
     public function view($view, $data = []){
-        require_once "../$view.php";
+        if(isset($_SERVER['HTTPS'])){
+            require "/storage/ssd4/802/20555802/public_html/view/$view.php";
+        }else{
+            require_once "../$view.php";
+        }
     }
     
     public function model($model){
