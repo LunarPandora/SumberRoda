@@ -3,6 +3,7 @@
 class Login extends Controller{
     
     public function __construct(){
+        var_dump($_SESSION);
         if(isset($_SERVER['HTTPS'])){
             if(Auth::user()) header('location: ../dashboard');
         }else{

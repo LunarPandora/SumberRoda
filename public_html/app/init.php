@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require "config/Config.php";
 // copy config/DatabaseAccount.php-example ke config/DatabaseAccount.php
 require "config/DatabaseAccount.php";
