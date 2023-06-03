@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+var_dump($_SESSION);
 if(isset($_SERVER['HTTPS'])){
     require "/storage/ssd4/802/20555802/public_html/app/init.php";
 }else{
