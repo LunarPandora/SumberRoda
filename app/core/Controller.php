@@ -2,11 +2,20 @@
 
 class Controller{
     public function view($view, $data = []){
-        require_once "../$view.php";
+        if(isset($_SERVER['HTTPS'])){
+            require "/storage/ssd4/802/20555802/public_html/view/$view.php";
+        }else{
+            require_once "../$view.php";
+        }
     }
     
     public function model($model){
-        require_once "../../app/model/$model.php";
+        if(isset($_SERVER['HTTPS'])){
+            require "/storage/ssd4/802/20555802/public_html/app/model/$model.php";
+        }else{
+            require_once "../../app/model/$model.php";
+        }
+        
         return new $model;
     }
 }
