@@ -1,5 +1,5 @@
 <?php
-if(!session_id()) session_start();
+session_start();
 
 require "config/Config.php";
 // copy config/DatabaseAccount.php-example ke config/DatabaseAccount.php
