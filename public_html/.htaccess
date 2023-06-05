@@ -1,1 +1,1 @@
-ErrorDocument 404 /index.php
+php_flag output_buffering on
