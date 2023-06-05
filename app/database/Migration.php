@@ -37,6 +37,13 @@ class Migration{
             
             echo "Berhasil menambahkan table merek_produk";
         }
+        
+        if(!$this->isExistTable('session_user')){
+            $this->db->query('CREATE TABLE `sumberroda`.`session_user` (`id` INT NOT NULL AUTO_INCREMENT , `session_id` VARCHAR(30) NOT NULL , `id_user` SMALLINT NOT NULL , `expired_time` TIMESTAMP NOT NULL , PRIMARY KEY (`id`), UNIQUE (`session_id`))');
+            
+            $this->db->execute();
+            echo "Berhasil menambahkan tabel session_user";
+        }
     }
 
     public function isExistTable($nama_tabel)
