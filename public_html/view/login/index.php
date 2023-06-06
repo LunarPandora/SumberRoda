@@ -5,7 +5,7 @@ if(isset($_SERVER['HTTPS'])){
     require_once "../../app/init.php";
 }
 
-var_dump($_SESSION);
+ob_get_contents();
 $page = new Login;
 if(isset($_POST['login'])){
     $success = $page->tryAuthenticate($_POST);
