@@ -4,11 +4,9 @@ class Auth{
     
     public static function setUser($data)
     {
-        ob_start();
-        echo "coba";
-        // foreach($data as $key => $value){
-        //     $_SESSION['user'][$key] = $value;
-        // }
+        foreach($data as $key => $value){
+            $_SESSION['user'][$key] = $value;
+        }
     }
     
     public static function user()
