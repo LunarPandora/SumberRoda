@@ -3,9 +3,6 @@
 class Merek_produk_model{
     private $table = 'merek_produk';
     private $db;
-    $idk = mysqli_real_escape_string($con, $_GET['id']);
-    $sql = "DELETE FROM kategori WHERE idk='$idk'";
-    mysqli_query($con, $sql);
     
     public function __construct()
     {

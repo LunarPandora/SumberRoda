@@ -10,7 +10,7 @@ class Kategori_model{
     }
     
     public function getAllData(){
-        $this->db->query("SELECT * FROM $this->table ");
+        $this->db->query("SELECT * FROM $this->table ORDER BY id DESC");
         return $this->db->resultSet();
     }
     
@@ -18,5 +18,36 @@ class Kategori_model{
     {
         $this->db->query("INSERT INTO $this->table(nama) VALUES('$data[nama]')");
         $this->db->execute();
+    }
+
+    public function fetchData($id)
+    {
+        $this->db->query("SELECT * FROM $this->table WHERE id=:id");
+        $this->db->bind('id', $id);
+        
+        return $this->db->single();
+    }
+    
+    public function editData($data)
+    {
+        $this->db->query("UPDATE $this->table SET nama=:nama WHERE id=:id");
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('id', $data['id']);
+        
+        return $this->db->execute();
+    }
+    
+    public function removeData($data)
+    {
+        $this->db->query("DELETE FROM $this->table WHERE id=:id");
+        $this->db->bind('id', $data['id']);
+        return $this->db->execute();
+    }
+
+    public function daleteData() {
+        $url = "index.php?menu=kategori";
+        $pesan = "Data berhasil dihapus";
+
+        echo "<script>alert('$pesan'); location='$url'; </script> ";
     }
 }
