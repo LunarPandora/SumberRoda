@@ -18,5 +18,5 @@ jobs:
           username: sumberroda
           password: sumberroda@istesa.net
           protocol: ftp
-          port: 22
+          port: 21
           timeout: 60000
