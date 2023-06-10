@@ -14,16 +14,9 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: files.000webhost.com
+          server: istesa.net
           username: sumberroda
-          password: 4MuE4m&1go2&e4(16^vY
+          password: sumberroda@istesa.net
           protocol: ftp
-          port: 21
-<<<<<<< HEAD
-<<<<<<< HEAD
+          port: 22
           timeout: 60000
-=======
->>>>>>> 7c5ee7f8ddb6b94f18b7970e907e94404e416e61
-=======
-          timeout: 30000
->>>>>>> 38177adf166227cd8657d583aa1d15d2474df1f2

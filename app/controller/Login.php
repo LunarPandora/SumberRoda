@@ -4,9 +4,9 @@ class Login extends Controller{
     
     public function __construct(){
         if(isset($_SERVER['HTTPS'])){
-            if(!Auth::user()) header('location: ../dashboard');
+            if(Auth::user()) header('location: ../dashboard');
         }else{
-            if(!Auth::user()) header('location: '. BASE_URL . '/view/dashboard');
+            if(Auth::user()) header('location: '. BASE_URL . '/view/dashboard');
         }
     }
     

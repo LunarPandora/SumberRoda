@@ -5,6 +5,8 @@ if(isset($_SERVER['HTTPS'])){
     require_once "../../app/init.php";
 }
 
+$page = new Kategori;
+
 if(isset($_POST['action'])){
     if($_POST['action'] == "add"){
         $result = $page->addData();
@@ -134,7 +136,7 @@ if(isset($_POST['delete'])){
                 </div>
                 <div class="modal-body">
                     <form id="form-data" method="post">
-                        <input type="hidden" id="id" name="id">8
+                        <input type="hidden" id="id" name="id">
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
                             <input type="text" id="nama" name="nama" class="form-control">

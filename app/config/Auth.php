@@ -1,32 +1,12 @@
 <?php
 
-class Auth extends Controller{
+class Auth {
     
     public static function setUser($data)
     {
         foreach($data as $key => $value){
             $_SESSION['user'][$key] = $value;
         }
-    }
-    
-    public function setUserSession($data)
-    {
-        $dataSession = [
-            'session_id' => $this->generateRandomString(),
-            'id_user' => $data['id'],
-            'expired_time' => time()+60*60*24*30
-        ];
-        
-        if($this->model('Session_user')->insertData($dataSession)){
-            echo "
-                <script>
-                    localStorage.setItem('suid', $dataSession[session_id]);
-                </script>
-            ";
-            
-            return true;
-        }
-        return false;
     }
     
     public static function user()
@@ -49,18 +29,18 @@ class Auth extends Controller{
         }
     }
     
-    public function generateRandomString($length = 30)
-    {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $characterLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[random_int(0, $characterLength - 1)];
-        }
+    // public function generateRandomString($length = 30)
+    // {
+    //     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //     $characterLength = strlen($characters);
+    //     $randomString = '';
+    //     for ($i = 0; $i < $length; $i++) {
+    //         $randomString .= $characters[random_int(0, $characterLength - 1)];
+    //     }
         
-        if($this->model('Session_user')->fetchData($randomString)){
-            $this->generateRandomString();
-        }
-        return $randomString;
-    }
+    //     if($this->model('Session_user')->fetchData($randomString)){
+    //         $this->generateRandomString();
+    //     }
+    //     return $randomString;
+    // }
 }
