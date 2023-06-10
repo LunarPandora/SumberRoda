@@ -3,7 +3,11 @@
 class Login extends Controller{
     
     public function __construct(){
-        if(Auth::user()) header("location:". BASE_URL . "/view/dashboard");
+        if(isset($_SERVER['HTTPS'])){
+            if(!Auth::user()) header('location: ../dashboard');
+        }else{
+            if(!Auth::user()) header('location: '. BASE_URL . '/view/dashboard');
+        }
     }
     
     public function index()
@@ -16,13 +20,21 @@ class Login extends Controller{
         $data = $this->model('user_model')->login($_POST);
         if(!$data){
             $_SESSION['error'] = "Gagal login, silahkan menggunakan email atau password yang berbeda";
-            header("location:". BASE_URL . "/view/login");
+            if(isset($_SERVER['HTTPS'])){
+                header('location: ../login');
+            }else{
+                header('location: '. BASE_URL . '/view/login');
+            }
             
             return 0;
         }
         
         Auth::setUser($data);
-        header("location:". BASE_URL . "/view/dashboard");
+        if(isset($_SERVER['HTTPS'])){
+            header('location: ../dashboard');
+        }else{
+            header('location: '. BASE_URL . '/view/dashboard');
+        }
     }
     
     public function logout()

@@ -1,9 +1,9 @@
 <?php
-require '../../app/init.php';
-
-$page = new Kategori;
-$dataEdit = [];
-$result = '';
+if(isset($_SERVER['HTTPS'])){
+    require "/storage/ssd4/802/20555802/public_html/app/init.php";
+}else{
+    require_once "../../app/init.php";
+}
 
 if(isset($_POST['action'])){
     if($_POST['action'] == "add"){
