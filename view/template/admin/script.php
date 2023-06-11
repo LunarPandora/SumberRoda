@@ -1,6 +1,3 @@
-<?php
-require '../../../app/init.php';
-?>
 <script src="<?= BASE_URL ?>assets/js/admin-script.js" async></script>
 <script src="<?= BASE_URL ?>assets/themes/vendor/jquery/jquery.min.js"></script>
 <script src="<?= BASE_URL ?>assets/themes/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

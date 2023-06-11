@@ -16,10 +16,13 @@ class User_model{
     
     public function login($data)
     {
-        $this->db->query("SELECT * FROM user WHERE email=:email AND password=:password");
+        $this->db->query("SELECT * FROM user WHERE email=:email");
         $this->db->bind('email', $data['user_email']);
-        $this->db->bind('password', md5($data['password']));
         
-        return $this->db->single();
+        if(password_verify($data['password'], $this->db->single()['password'])){
+            return $this->db->single();
+        }else{
+            return false;
+        }
     }
 }

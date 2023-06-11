@@ -1,0 +1,133 @@
+:root{
+    --text-2xs: 0.75rem;
+    --text-xs: 0.875rem;
+    --text-sm: 1rem;
+    --text-md: 1.125rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.75rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3rem;
+    --text-6xl: 4rem;
+    --text-7xl: 5.5rem;
+    
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+}
+
+@font-face {
+    font-family: "Hind Regular";
+    src: url('../../fonts/Hind-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Hind Medium";
+    src: url('../../fonts/Hind-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Hind Light";
+    src: url('../../fonts/Hind-Light.ttf');
+}
+
+@font-face {
+    font-family: "Hind SemiBold";
+    src: url('../../fonts/Hind-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: "Hind Bold";
+    src: url('../../fonts/Hind-Bold.ttf');
+}
+
+.text-2xs{
+    font-size: var(--text-2xs);
+}
+
+.text-xs{
+    font-size: var(--text-xs);
+}
+
+.text-sm{
+    font-size: var(--text-sm);
+}
+
+.text-md{
+    font-size: var(--text-md);
+}
+
+.text-lg{
+    font-size: var(--text-lg);
+}
+
+.text-xl{
+    font-size: var(--text-xl);
+}
+
+.text-2xl{
+    font-size: var(--text-2xl);
+}
+
+.text-3xl{
+    font-size: var(--text-3xl);
+}
+
+.text-4xl{
+    font-size: var(--text-4xl);
+}
+
+.text-5xl{
+    font-size: var(--text-5xl);
+}
+
+.text-6xl{
+    font-size: var(--text-6xl);
+}
+
+.text-7xl{
+    font-size: var(--text-7xl);
+}
+
+.fw-thin{
+    font-weight: var(--fw-thin);
+}
+
+.fw-extralight{
+    font-weight: var(--fw-extralight);
+}
+
+.fw-light{
+    font-family: 'Hind Light', sans-serif;
+}
+
+.fw-normal{
+    font-family: 'Hind Regular', sans-serif;
+}
+
+.fw-medium{
+    font-family: 'Hind Medium', sans-serif;
+}
+
+.fw-semibold{
+    font-family: 'Hind SemiBold', sans-serif;
+}
+
+.fw-bold{
+    font-family: 'Hind Bold', sans-serif;
+}
+
+.fw-extrabold{
+    font-weight: var(--fw-extrabold);
+}
+
+.fw-black{
+    font-weight: var(--fw-black);
+}

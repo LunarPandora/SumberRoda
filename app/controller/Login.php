@@ -2,7 +2,6 @@
 class Login extends Controller{
     
     public function __construct(){
-        $_SESSION['coba'] = "Bisa jalan dak";
         if(Auth::user()) header('location: '. BASE_URL . 'view/dashboard');
     }
     

@@ -64,7 +64,7 @@ if(isset($_POST['delete'])){
                         </div>
                         <div class="card-body">
                             <button onclick="openForm()" class="btn btn-primary">
-                                <i class="fas fa-plus"></i> Tambah
+                                <i class="fa fa-plus"></i> Tambah
                             </button>
                         </div>
                         <div class="card-body">
@@ -76,6 +76,7 @@ if(isset($_POST['delete'])){
                                             <th>Nama produk</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
+                                            <th>Gambar</th>
                                             <th>Deskripsi</th>
                                             <th width="60">Action</th>
                                         </tr>
@@ -92,8 +93,8 @@ if(isset($_POST['delete'])){
                                                 <td><?= $i; ?></td>
                                                 <td><?= $row['nama']; ?></td>
                                                 <td><?= $row['kategori']; ?></td>
-
                                                 <td align="right"><?= $row['harga']; ?></td>
+                                                <td><img src="<?= $row['gambar']; ?>" width="75" height="75"></td>  
                                                 <td><?= $row['deskripsi']; ?></td>
                                                 <td class="d-flex gap-1 p-1">
                                                     <form id="edit-form" method="post">
@@ -143,13 +144,15 @@ if(isset($_POST['delete'])){
                         <input type="hidden" id="id" name="id">
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" id="nama" name="nama" class="form-control">
-                            <label for="kategori" class="form-label">kategori</label>
+                            <input type="text" id="nama" name="nama" class="form-control" require placeholder="Masukkan nama produk">
+                            <label for="kategori" class="form-label">Kategori</label>
                             <input type="text" id="kategori" name="kategori" class="form-control">
-                            <label for="harga" class="form-label">harga</label>
-                            <input type="text" id="harga" name="harga" class="form-control">
-                            <label for="deskripsi" class="form-label">deskripsi</label>
-                            <input type="text" id="deskripsi" name="deskripsi" class="form-control">
+                            <label for="harga" class="form-label">Harga</label>
+                            <input type="text" id="harga" name="harga" class="form-control" require placeholder="Masukkan harga produk">
+                            <label for="gambar" class="form-label">Gambar<sup class="text-danger">*Kosongkan jika tidak ada gambar</sup></label>
+                            <input type="file" class="form-control" name="gambar">
+                            <label for="deskripsi" class="form-label">Deskripsi<sup class="text-danger">*Kosongkan jika tidak ada deskripsi</sup></label>
+                            <input type="text" id="deskripsi" name="deskripsi" class="form-control" require placeholder="Masukan deskripsi produk"> 
                         </div>
                         
                         <div class="modal-footer">
@@ -178,6 +181,7 @@ if(isset($_POST['delete'])){
         $('#nama').val(data.nama);
         $('#kategori').val(data.kategori);
         $('#harga').val(data.harga);
+        $('#gambar').val(data.gambar);
         $('#deskripsi').val(data.deskripsi);
         $('#btnAction').val('edit');
         $('#btnAction').text('Ubah');

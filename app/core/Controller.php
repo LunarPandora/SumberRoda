@@ -1,7 +1,7 @@
 <?php
 class Controller{
     public function view($view, $data = []){
-        require_once BASE_URL."view/$view.php";
+        require_once "../$view.php";
     }
     
     public function model($model){

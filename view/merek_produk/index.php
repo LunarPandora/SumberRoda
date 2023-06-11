@@ -65,7 +65,7 @@ if(isset($_POST['delete'])){
                         </div>
                         <div class="card-body">
                             <button onclick="openForm()" class="btn btn-primary">
-                                <i class="fas fa-plus"></i> Tambah
+                                <i class="fa fa-plus"></i> Tambah
                             </button>
                         </div>
                         <div class="card-body">
@@ -137,7 +137,7 @@ if(isset($_POST['delete'])){
                         <input type="hidden" id="id" name="id">
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" id="nama" name="nama" class="form-control">
+                            <input type="text" id="nama" name="nama" class="form-control" require placeholder="Masukan nama merek">
                         </div>
                         
                         <div class="modal-footer">
