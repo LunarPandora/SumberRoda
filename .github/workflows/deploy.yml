@@ -15,8 +15,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: istesa.net
-          username: sumberroda
-          password: sumberroda@istesa.net
+          username: sumberroda@istesa.net
+          password: fKaoF1CRZ1ZG
           protocol: ftp
           port: 21
           timeout: 60000
