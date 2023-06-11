@@ -1,7 +1,8 @@
 <?php
-    if(isset($_POST['logout'])){
-        Auth::logout();
-    }
+require '../../../app/init.php';
+if(isset($_POST['logout'])){
+    Auth::logout();
+}
 ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-dark  sidebar sidebar-dark accordion" id="accordionSidebar">
