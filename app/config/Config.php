@@ -3,8 +3,9 @@ namespace App;
 
 class Config{
     public function base_url(){
-        if(isset($_SERVER['HTTPS'])){
-            return "https://sumberroda.000webhostapp.com/";
+        if(isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off"){
+            $url = explode($_SERVER['SCRIPT_URL'], $_SERVER['SCRIPT_URI']);
+            return $url[0]."/";
         }
         
         if(isset($_SERVER['HTTP_HOST'])) {

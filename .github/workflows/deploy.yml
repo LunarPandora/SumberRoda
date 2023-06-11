@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      native_php
+      ndak_ada
     
 jobs:
   deploy:
@@ -14,9 +14,9 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: istesa.net
-          username: sumberroda
-          password: sumberroda@istesa.net
+          server: ndak_ada
+          username: ndak_ada
+          password: ndak_ada
           protocol: ftp
           port: 21
           timeout: 60000

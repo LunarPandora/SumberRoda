@@ -1,9 +1,5 @@
 <?php
-if(isset($_SERVER['HTTPS'])){
-    require "/storage/ssd4/802/20555802/public_html/app/init.php";
-}else{
-    require_once "../../app/init.php";
-}
+require_once "../../app/init.php";
 
 ?>
 <!DOCTYPE html>
