@@ -1,10 +1,8 @@
 <?php
-if(isset($_SERVER['HTTPS'])){
-    require "/storage/ssd4/802/20555802/public_html/app/init.php";
-}else{
-    require_once "../../app/init.php";
-}
+require_once "../../app/init.php";
 
+// $_SESSION['coba'] = "bisa jalan dak";
+echo $_SESSION['coba'];
 $page = new Login;
 if(isset($_POST['login'])){
     $success = $page->tryAuthenticate($_POST);
@@ -38,6 +36,7 @@ if(isset($_POST['login'])){
     <?php 
         if(isset($_SESSION['error'])){
             echo $_SESSION['error'];
+            unset($_SESSION['error']);
         }
     ?>
     

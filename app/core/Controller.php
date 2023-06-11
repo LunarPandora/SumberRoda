@@ -3,7 +3,7 @@
 class Controller{
     public function view($view, $data = []){
         if(isset($_SERVER['HTTPS'])){
-            require "/storage/ssd4/802/20555802/public_html/view/$view.php";
+            require BASE_URL."app/view/$view.php";
         }else{
             require_once "../$view.php";
         }
@@ -11,7 +11,7 @@ class Controller{
     
     public function model($model){
         if(isset($_SERVER['HTTPS'])){
-            require "/storage/ssd4/802/20555802/public_html/app/model/$model.php";
+            require BASE_URL."app/model/$model.php";
         }else{
             require_once "../../app/model/$model.php";
         }
