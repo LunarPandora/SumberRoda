@@ -16,13 +16,14 @@ class Produk_model{
     
     public function insertData($data)
     {
-        $this->db->query("INSERT INTO $this->table(nama, kategori, harga, deskripsi) 
+        $this->db->query("INSERT INTO $this->table(nama, kategori, harga, gambar, deskripsi) 
         VALUES(
             '$data[nama]', 
             '$data[kategori]', 
-            '$data[harga]', 
+            '$data[harga]',
+            '$data[gambar]', 
             '$data[deskripsi]')");
-        return $this->db->execute();        
+        return $this->db->execute();
     }
     
     public function fetchData($id)
@@ -35,12 +36,13 @@ class Produk_model{
     
     public function editData($data)
     {
-        $this->db->query("UPDATE $this->table SET nama=:nama, kategori=:kategori, harga=:harga, deskripsi=:deskripsi 
+        $this->db->query("UPDATE $this->table SET nama=:nama, kategori=:kategori, harga=:harga, gambar=:gambar, deskripsi=:deskripsi 
         WHERE id=:id");
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('id', $data['id']);
         $this->db->bind('kategori', $data['kategori']);
         $this->db->bind('harga', $data['harga']);
+        $this->db->bind('gambar', $data['gambar']);
         $this->db->bind('deskripsi', $data['deskripsi']);
         
         return $this->db->execute();

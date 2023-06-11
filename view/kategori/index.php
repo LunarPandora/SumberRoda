@@ -139,7 +139,7 @@ if(isset($_POST['delete'])){
                         <input type="hidden" id="id" name="id">
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" id="nama" name="nama" class="form-control">
+                            <input type="text" id="nama" name="nama" class="form-control" require placeholder="Masukan nama kategori">
                         </div>
                         
                         <div class="modal-footer">
