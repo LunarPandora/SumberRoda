@@ -14,10 +14,10 @@ class Login extends Controller{
     public function tryAuthenticate()
     {
         $data = $this->model('User_model')->login($_POST);
+        
         if(!$data){
+            $_SESSION['error'] = "Silahkan menggunakan email atau password yang lain";
             header('location: '. BASE_URL . 'view/login');
-            
-            return 0;
         }
         
         Auth::setUser($data);
