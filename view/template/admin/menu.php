@@ -7,9 +7,6 @@ if(isset($_POST['logout'])){
 <ul class="navbar-nav bg-gradient-dark  sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE_URL; ?>">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fa fa-laugh-wink"></i>
-        </div>
         <div class="sidebar-brand-text mx-3"><img width="60" src="<?= BASE_URL; ?>assets/media/logo.png" alt=""></div>
     </a>
 

@@ -1,9 +1,5 @@
 <?php
-if(isset($_SERVER['HTTPS'])){
-    require "/storage/ssd4/802/20555802/public_html/app/init.php";
-}else{
-    require_once "../../app/init.php";
-}
+require_once "../../app/init.php";
 
 $page = new Kategori;
 
@@ -13,7 +9,7 @@ if(isset($_POST['action'])){
     }else{
         $result = $page->updateData();
     }
-    header('location:'.BASE_URL.'/view/kategori');
+    header('location:'.BASE_URL.'view/kategori');
 }
 
 if(isset($_POST['edit'])){
@@ -22,7 +18,7 @@ if(isset($_POST['edit'])){
 
 if(isset($_POST['delete'])){
     $page->deleteData();
-    header('location:'.BASE_URL.'/view/kategori');
+    header('location:'.BASE_URL.'view/kategori');
 }
 ?>
 <!DOCTYPE html>

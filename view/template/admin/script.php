@@ -21,3 +21,4 @@
 
 <!-- Page level custom scripts -->
 <script src="<?= BASE_URL ?>assets/themes/js/demo/datatables-demo.js"></script>
+<script src="https://kit.fontawesome.com/64a5c269d8.js" crossorigin="anonymous"></script>
