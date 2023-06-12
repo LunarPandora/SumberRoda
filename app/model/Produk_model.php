@@ -10,15 +10,19 @@ class Produk_model{
     }
     
     public function getAllData(){
-        $this->db->query("SELECT * FROM $this->table ORDER BY id DESC");
+        $this->db->query("SELECT * FROM $this->table
+            JOIN master_kategori ON $this->table.kategori = master_kategori.id
+            JOIN merek_produk ON $this->table.merek = merek_produk.id
+            ORDER BY $this->table.id DESC");
         return $this->db->resultSet();
     }
     
     public function insertData($data)
     {
-        $this->db->query("INSERT INTO $this->table(nama, kategori, harga, gambar, deskripsi) 
+        $this->db->query("INSERT INTO $this->table(nama, merek, kategori, harga, gambar, deskripsi) 
         VALUES(
             '$data[nama]', 
+            '$data[merek]', 
             '$data[kategori]', 
             '$data[harga]',
             '$data[gambar]', 
@@ -36,10 +40,11 @@ class Produk_model{
     
     public function editData($data)
     {
-        $this->db->query("UPDATE $this->table SET nama=:nama, kategori=:kategori, harga=:harga, gambar=:gambar, deskripsi=:deskripsi 
+        $this->db->query("UPDATE $this->table SET nama=:nama, merek=:merek, kategori=:kategori, harga=:harga, gambar=:gambar, deskripsi=:deskripsi 
         WHERE id=:id");
-        $this->db->bind('nama', $data['nama']);
         $this->db->bind('id', $data['id']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('merek', $data['merek']);
         $this->db->bind('kategori', $data['kategori']);
         $this->db->bind('harga', $data['harga']);
         $this->db->bind('gambar', $data['gambar']);

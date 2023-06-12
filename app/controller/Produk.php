@@ -45,4 +45,14 @@ class Produk extends Controller{
         
         return "$_POST[nama] gagal dihapus";
     }
+
+    public function getDataMerek()
+    {
+        return $this->model('Merek_produk_model')->getAllData();
+    }
+
+    public function getDataKategori()
+    {
+        return $this->model('Kategori_model')->getAllData();
+    }
 }

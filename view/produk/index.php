@@ -3,6 +3,7 @@ require_once "../../app/init.php";
 
 $page = new Produk;
 $result = '';
+$dataEdit = [];
 
 if(isset($_POST['action'])){
     if($_POST['action'] == "add"){
@@ -73,7 +74,8 @@ if(isset($_POST['delete'])){
                                     <thead>
                                         <tr>
                                             <th width="10">No</th>
-                                            <th>Nama produk</th>
+                                            <th>Nama Produk</th>
+                                            <th>Merek Produk</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
                                             <th>Gambar</th>
@@ -85,6 +87,7 @@ if(isset($_POST['delete'])){
                                     <tbody>
                                         <?php
                                         $i = 1;
+                                        var_dump($page->getAllData());
                                         foreach($page->getAllData() as $row)
                                         {
                                             $id = $row['id'];
@@ -92,6 +95,7 @@ if(isset($_POST['delete'])){
                                             <tr>
                                                 <td><?= $i; ?></td>
                                                 <td><?= $row['nama']; ?></td>
+                                                <td><?= $row['merek']; ?></td>
                                                 <td><?= $row['kategori']; ?></td>
                                                 <td align="right"><?= $row['harga']; ?></td>
                                                 <td><img src="<?= $row['gambar']; ?>" width="75" height="75"></td>  
@@ -145,16 +149,45 @@ if(isset($_POST['delete'])){
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
                             <input type="text" id="nama" name="nama" class="form-control" require placeholder="Masukkan nama produk">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="merek" class="form-label">Merek</label>
+                            <select name="merek" id="merek" class="form-control">
+                            <?php
+                                foreach ($page->getDataMerek() as $row) {
+                                    echo "<option value= '$row[id]'>$row[nama]</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label for="kategori" class="form-label">Kategori</label>
-                            <input type="text" id="kategori" name="kategori" class="form-control">
+                            <select name="kategori" id="kategori" class="form-control">
+                            <?php
+                                foreach ($page->getDataKategori() as $row) {
+                                    echo "<option value= '$row[id]'>$row[nama]</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label for="harga" class="form-label">Harga</label>
                             <input type="text" id="harga" name="harga" class="form-control" require placeholder="Masukkan harga produk">
+                        </div>
+
+                        <div class="form-group">
                             <label for="gambar" class="form-label">Gambar<sup class="text-danger">*Kosongkan jika tidak ada gambar</sup></label>
-                            <input type="file" class="form-control" name="gambar">
+                            <input type="file" name="gambar" id="gambar" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="deskripsi" class="form-label">Deskripsi<sup class="text-danger">*Kosongkan jika tidak ada deskripsi</sup></label>
                             <input type="text" id="deskripsi" name="deskripsi" class="form-control" require placeholder="Masukan deskripsi produk"> 
                         </div>
-                        
+
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" onclick="closeModal(`<?= $_SERVER['PHP_SELF']; ?>`)" data-dismiss="modal">Batal</button>
                             <button type="submit" id="btnAction" name="action" class="btn btn-primary" value="add">Tambah</button>
@@ -166,7 +199,7 @@ if(isset($_POST['delete'])){
     </div>
 
     <?php $page->view('template/admin/script')?>
-<script>
+<script async>
     $(document).ready(() => {
         const data = (`<?= json_encode($dataEdit) ?>`) ? `<?= json_encode($dataEdit) ?>` : {};
         var dataEdit = JSON.parse(data);
@@ -179,6 +212,7 @@ if(isset($_POST['delete'])){
     const assignData = (data) => {
         $('#id').val(data.id);
         $('#nama').val(data.nama);
+        $('#merek').val(data.merek);
         $('#kategori').val(data.kategori);
         $('#harga').val(data.harga);
         $('#gambar').val(data.gambar);
@@ -193,7 +227,7 @@ if(isset($_POST['delete'])){
         for(i in data) return false;
         return true;
     }
-    function openForm(){
+    const openForm = () => {
         $('#form-modal').modal('show');
     }
 </script>
