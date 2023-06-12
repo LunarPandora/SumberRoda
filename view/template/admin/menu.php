@@ -15,7 +15,7 @@ if(isset($_POST['logout'])){
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= BASE_URL; ?>">
+        <a class="nav-link" href="<?= BASE_URL; ?>view/dashboard">
             <i class="fa fa-fw fa-home"></i>
             <span>Dashboard</span>
         </a>

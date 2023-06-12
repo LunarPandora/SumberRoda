@@ -38,7 +38,7 @@ $page = new Dashboard;
                             <div class="card p-0 bg-primary">
                                 <div class="card-body">
                                     <h5 class="text-white fw-bold">Jumlah Kategori</h5>
-                                    <h5 class="text-white">32</h5>
+                                    <h5 class="text-white"><?= $page->countKategori(); ?></h5>
                                 </div>
                             </div>
                         </div>
@@ -55,8 +55,8 @@ $page = new Dashboard;
                         <div class="col-lg-4 col-md-6 col-12 px-md-1 py-md-1 ">
                             <div class="card p-0 bg-primary">
                                 <div class="card-body">
-                                    <h5 class="text-white fw-bold">Jumlah Invoice</h5>
-                                    <h5 class="text-white">32</h5>
+                                    <h5 class="text-white fw-bold">Jumlah Merek</h5>
+                                    <h5 class="text-white"><?= $page->countMerek(); ?></h5>
                                 </div>
                             </div>
                         </div>
