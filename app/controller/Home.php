@@ -1,12 +1,9 @@
 <?php
 
 class Home extends Controller{
-    
-    public function index()
+    public function allProduk()
     {
-        // $user = $this->model('user_model')->getUser();
-        // var_dump($user['nama']);
-        echo BASE_URL;
-        $this->view('home/index');
+        $data = $this->model('Produk_model')->getAllData();
+        return $data;
     }
 }

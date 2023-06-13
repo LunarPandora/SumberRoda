@@ -82,11 +82,11 @@ if(isset($_POST['delete'])){
                                         $i = 1;
                                         foreach($page->getAllData() as $row)
                                         {
-                                            $id = $row['id'];
+                                            $id = $row['id_kategori'];
                                         ?>
                                             <tr>
                                                 <td><?= $i; ?></td>
-                                                <td><?= $row['nama']; ?></td>
+                                                <td><?= $row['nama_kategori']; ?></td>
                                                 <td class="d-flex gap-1 p-1">
                                                     <form id="edit-form" method="post">
                                                     <input type="hidden" name="id" value="<?= $id; ?>">
@@ -160,8 +160,8 @@ if(isset($_POST['delete'])){
     })
     
     const assignData = (data) => {
-        $('#id').val(data.id);
-        $('#nama').val(data.nama);
+        $('#id').val(data.id_kategori);
+        $('#nama').val(data.nama_kategori);
         $('#btnAction').val('edit');
         $('#btnAction').text('Ubah');
         $('#btnAction').removeClass('btn-primary').addClass('btn-warning');

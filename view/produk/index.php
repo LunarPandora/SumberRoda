@@ -20,7 +20,7 @@ if(isset($_POST['edit'])){
 
 if(isset($_POST['delete'])){
     $page->deleteData();
-    // header('location:'.BASE_URL.'view/produk');
+    header('location:'.BASE_URL.'view/produk');
 }
 ?>
 <!DOCTYPE html>
@@ -98,15 +98,16 @@ if(isset($_POST['delete'])){
                                         $i = 1;
                                         foreach($page->getAllData() as $row)
                                         {
-                                            $id = $row['merek'];
+                                            $id = $row['id'];
+                                            $imgUrl = BASE_URL."storage/images/$row[gambar]";
                                         ?>
                                             <tr>
                                                 <td><?= $i; ?></td>
                                                 <td><?= $row['nama']; ?></td>
-                                                <td><?= $row['merek']; ?></td>
-                                                <td><?= $row['kategori']; ?></td>
+                                                <td><?= $row['nama_merek']; ?></td>
+                                                <td><?= $row['nama_kategori']; ?></td>
                                                 <td align="right"><?= $row['harga']; ?></td>
-                                                <td><img src="<?= $row['gambar']; ?>" width="75" height="75"></td>  
+                                                <td><img src="<?= $imgUrl; ?>" width="75" height="75"></td>  
                                                 <td><?= $row['deskripsi']; ?></td>
                                                 <td class="d-flex gap-1 p-1">
                                                     <form id="edit-form" method="post">
@@ -164,7 +165,7 @@ if(isset($_POST['delete'])){
                             <select name="merek" id="merek" class="form-control">
                             <?php
                                 foreach ($page->getDataMerek() as $row) {
-                                    echo "<option value= '$row[id]'>$row[nama]</option>";
+                                    echo "<option value= '$row[id_merek]'>$row[nama_merek]</option>";
                                 }
                             ?>
                             </select>
@@ -175,7 +176,7 @@ if(isset($_POST['delete'])){
                             <select name="kategori" id="kategori" class="form-control">
                             <?php
                                 foreach ($page->getDataKategori() as $row) {
-                                    echo "<option value= '$row[id]'>$row[nama]</option>";
+                                    echo "<option value= '$row[id_kategori]'>$row[nama_kategori]</option>";
                                 }
                             ?>
                             </select>
@@ -225,7 +226,7 @@ if(isset($_POST['delete'])){
         $('#merek').val(data.merek);
         $('#kategori').val(data.kategori);
         $('#harga').val(data.harga);
-        $('#gambar').val(data.gambar);
+        // $('#gambar').val(data.gambar);
         $('#deskripsi').val(data.deskripsi);
         $('#btnAction').val('edit');
         $('#btnAction').text('Ubah');

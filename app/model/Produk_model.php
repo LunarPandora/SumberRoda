@@ -11,8 +11,8 @@ class Produk_model{
     
     public function getAllData(){
         $this->db->query("SELECT * FROM $this->table
-            JOIN master_kategori ON $this->table.kategori = master_kategori.id
-            JOIN merek_produk ON $this->table.merek = merek_produk.id");
+            JOIN master_kategori ON $this->table.kategori = master_kategori.id_kategori
+            JOIN merek_produk ON $this->table.merek = merek_produk.id_merek");
         return $this->db->resultSet();
     }
     
@@ -26,7 +26,9 @@ class Produk_model{
             '$data[harga]',
             '$data[gambar]', 
             '$data[deskripsi]')");
-        return $this->db->execute();
+        $this->db->execute();
+        
+        return true;
     }
     
     public function fetchData($id)
@@ -39,8 +41,8 @@ class Produk_model{
     
     public function editData($data)
     {
-        $this->db->query("UPDATE $this->table SET nama=:nama, merek=:merek, kategori=:kategori, harga=:harga, gambar=:gambar, deskripsi=:deskripsi 
-        WHERE id=:id");
+        $this->db->query("UPDATE $this->table SET nama=:nama, merek=:merek, kategori=:kategori, harga=:harga, gambar=:gambar,
+        deskripsi=:deskripsi WHERE id=:id");
         $this->db->bind('id', $data['id']);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('merek', $data['merek']);
@@ -49,13 +51,16 @@ class Produk_model{
         $this->db->bind('gambar', $data['gambar']);
         $this->db->bind('deskripsi', $data['deskripsi']);
         
-        return $this->db->execute();
+        $this->db->execute();
+        return true;
     }
     
     public function removeData($data)
     {
         $this->db->query("DELETE FROM $this->table WHERE id=:id");
         $this->db->bind('id', $data['id']);
-        return $this->db->execute();
+        $this->db->execute();
+        
+        return true;
     }
 }

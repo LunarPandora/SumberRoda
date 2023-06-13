@@ -1,6 +1,7 @@
 <?php
 require_once "../../app/init.php";
 
+$page = new Home;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,239 +154,120 @@ require_once "../../app/init.php";
 
             <div id="products" class="flex flex-col">
                 <div class="flex flex-row" id="ban">
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_ban.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Ban</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2 w-100">
-                                <p class="product-title text-2xl text-white text-wrap">
-                                    Ban Aakiegjhoaigehoahegoiahgoaehgoahoiageh
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
                     
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_ban.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Ban</span>
+                    <?php
+                        foreach($page->allProduk() as $row){
+                            if($row['nama_kategori'] == "ban"){
+                    ?>
+                        <div class="productbox">
+                            <div class="product-image">
+                                <img class="img-fluid" src="<?= BASE_URL."storage/images/{$row['gambar']}";  ?>" />
                             </div>
 
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Ban A
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
+                            <div class="product-content p-3">
+                                <div class="product-tags">
+                                    <span class="tag"><?= $row['nama_kategori']; ?></span>
+                                </div>
+
+                                <div class="product-info flex flex-row justify-between items-center my-2 w-100">
+                                    <p class="product-title text-md text-white text-wrap">
+                                        <?= $row['nama']; ?>
+                                    </p>
+                                    <p class="product-price text-lg fw-semibold text-primary"><?= 'Rp. '.number_format($row['harga'], 0, ',', '.'); ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_ban.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Ban</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Ban A
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="flex flex-row" id="velg">
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_velg.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Velg</span>
+                    <?php
+                        foreach($page->allProduk() as $row){
+                            if($row['nama_kategori'] == "velg"){
+                    ?>
+                        <div class="productbox">
+                            <div class="product-image">
+                                <img class="img-fluid" src="<?= BASE_URL."storage/images/{$row['gambar']}";  ?>" />
                             </div>
 
-                            <div class="product-info flex flex-row justify-between items-center my-2 w-100">
-                                <p class="product-title text-2xl text-white text-wrap">
-                                    Velg A
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
+                            <div class="product-content p-3">
+                                <div class="product-tags">
+                                    <span class="tag"><?= $row['nama_kategori']; ?></span>
+                                </div>
+
+                                <div class="product-info flex flex-row justify-between items-center my-2 w-100">
+                                    <p class="product-title text-md text-white text-wrap">
+                                        <?= $row['nama']; ?>
+                                    </p>
+                                    <p class="product-price text-lg fw-semibold text-primary"><?= 'Rp. '.number_format($row['harga'], 0, ',', '.'); ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_velg.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Velg</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Velg B
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_velg.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Velg</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Velg C
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="flex flex-row" id="oli">
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_oli.png" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Oli</span>
+                    <?php
+                        foreach($page->allProduk() as $row){
+                            if($row['nama_kategori'] == "oli"){
+                    ?>
+                        <div class="productbox">
+                            <div class="product-image">
+                                <img class="img-fluid" src="<?= BASE_URL."storage/images/{$row['gambar']}";  ?>" />
                             </div>
 
-                            <div class="product-info flex flex-row justify-between items-center my-2 w-100">
-                                <p class="product-title text-2xl text-white text-wrap">
-                                    Oli 1
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
+                            <div class="product-content p-3">
+                                <div class="product-tags">
+                                    <span class="tag"><?= $row['nama_kategori']; ?></span>
+                                </div>
+
+                                <div class="product-info flex flex-row justify-between items-center my-2 w-100">
+                                    <p class="product-title text-md text-white text-wrap">
+                                        <?= $row['nama']; ?>
+                                    </p>
+                                    <p class="product-price text-lg fw-semibold text-primary"><?= 'Rp. '.number_format($row['harga'], 0, ',', '.'); ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_oli.png" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Oli</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Oli 2
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_oli.png" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Oli</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Oli 3
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="flex flex-row" id="baterai">
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_baterai.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Baterai</span>
+                    <?php
+                        foreach($page->allProduk() as $row){
+                            if($row['nama_kategori'] == "aki"){
+                    ?>
+                        <div class="productbox">
+                            <div class="product-image">
+                                <img class="img-fluid" src="<?= BASE_URL."storage/images/{$row['gambar']}";  ?>" />
                             </div>
 
-                            <div class="product-info flex flex-row justify-between items-center my-2 w-100">
-                                <p class="product-title text-2xl text-white text-wrap">
-                                    Baterai atau Aki
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
+                            <div class="product-content p-3">
+                                <div class="product-tags">
+                                    <span class="tag"><?= $row['nama_kategori']; ?></span>
+                                </div>
+
+                                <div class="product-info flex flex-row justify-between items-center my-2 w-100">
+                                    <p class="product-title text-md text-white text-wrap">
+                                        <?= $row['nama']; ?>
+                                    </p>
+                                    <p class="product-price text-lg fw-semibold text-primary"><?= 'Rp. '.number_format($row['harga'], 0, ',', '.'); ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_baterai.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Baterai</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Aki kayaknya
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="productbox">
-                        <div class="product-image">
-                            <img class="img-fluid" src="../../assets/media/products/product_baterai.jpg" />
-                        </div>
-
-                        <div class="product-content p-3">
-                            <div class="product-tags">
-                                <span class="tag">Baterai</span>
-                            </div>
-
-                            <div class="product-info flex flex-row justify-between items-center my-2">
-                                <p class="product-title text-2xl text-white w-75 text-wrap">
-                                    Aki atau gimana sih
-                                </p>
-                                <p class="product-price text-lg fw-semibold text-primary">Rp200.000</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
 
                 <div class="flex justify-center my-4">

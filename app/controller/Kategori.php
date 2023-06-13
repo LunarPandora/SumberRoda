@@ -18,7 +18,7 @@ class Kategori extends Controller{
             return "$_POST[nama] berhasil ditambah";
         }
         
-        return "$_POST[nama] gagal dimasukkan, coba tambahkan ulang";
+        return "$_P`OST[nama] gagal dimasukkan, coba tambahkan ulang";
     }
     
     public function getData()

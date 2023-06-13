@@ -8,7 +8,6 @@ class Produk extends Controller{
     
     public function getAllData()
     {
-        var_dump(json_encode($this->model('Produk_model')->getAllData()));
         return $this->model('Produk_model')->getAllData();
     }
     
@@ -36,6 +35,18 @@ class Produk extends Controller{
     
     public function updateData()
     {
+        $data = $this->model('Produk_model')->fetchData($_POST['id']);
+        $_POST['gambar'] = $data['gambar'];
+        
+        if($_FILES['gambar']['name']){
+            $image = $this->moveImage($_FILES['gambar']);
+            if($image == false){
+                return 0;
+            }
+            
+            $_POST['gambar'] = $image;
+        }
+
         if($this->model('Produk_model')->editData($_POST))
         {
             return "$_POST[nama] berhasil diubah";
@@ -72,7 +83,8 @@ class Produk extends Controller{
             $accepted_ext = array('png', 'jpg', 'jpeg');
             $exploded_name = explode('.', $file['name']);
             $ext = strtolower(end($exploded_name));
-            $file_name = time().implode("_", explode(" ", $file['name']));
+            
+            $file_name = time().implode("", explode("#", implode("_", explode(" ", $file['name']))));
             
             if($file['size'] > 2048000){
                 $_SESSION['invalid_data'][] = "Silahkan cek ukuran file yang dimasukkan, tidak boleh melebihi 2 MB";
@@ -84,11 +96,7 @@ class Produk extends Controller{
                 return false;
             }
             
-            if(isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off"){
-                move_uploaded_file($file['tmp_name'], BASE_URL."storage/images/$file_name");
-            }else{
-                move_uploaded_file($file['tmp_name'], "../../storage/images/$file_name");
-            }
+            move_uploaded_file($file['tmp_name'], "../../storage/images/$file_name");
             return $file_name;
         }
         

@@ -22,7 +22,7 @@ class Migration{
         
         if(!$this->isExistTable('master_kategori'))
         {
-            $this->db->query("CREATE TABLE `sumberroda`.`master_kategori` (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`))");
+            $this->db->query("CREATE TABLE `sumberroda`.`master_kategori` (`id_kategori` INT NOT NULL AUTO_INCREMENT , `nama_kategori` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`))");
         
             $this->db->execute();
             
@@ -31,7 +31,7 @@ class Migration{
         
         if(!$this->isExistTable('merek_produk'))
         {
-            $this->db->query("CREATE TABLE `sumberroda`.`merek_produk` (`id` INT NOT NULL AUTO_INCREMENT , `nama` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`))");
+            $this->db->query("CREATE TABLE `sumberroda`.`merek_produk` (`id_merek` INT NOT NULL AUTO_INCREMENT , `nama_merek` VARCHAR(150) NOT NULL , PRIMARY KEY (`id`))");
         
             $this->db->execute();
             
