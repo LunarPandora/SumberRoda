@@ -47,7 +47,7 @@ $page = new Dashboard;
                             <div class="card p-0 bg-primary">
                                 <div class="card-body">
                                     <h5 class="text-white fw-bold">Jumlah Produk</h5>
-                                    <h5 class="text-white">32</h5>
+                                    <h5 class="text-white"><?= $page->countProduk(); ?></h5>
                                 </div>
                             </div>
                         </div>

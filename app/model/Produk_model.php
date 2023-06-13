@@ -12,8 +12,7 @@ class Produk_model{
     public function getAllData(){
         $this->db->query("SELECT * FROM $this->table
             JOIN master_kategori ON $this->table.kategori = master_kategori.id
-            JOIN merek_produk ON $this->table.merek = merek_produk.id
-            ORDER BY $this->table.id DESC");
+            JOIN merek_produk ON $this->table.merek = merek_produk.id");
         return $this->db->resultSet();
     }
     
@@ -59,12 +58,4 @@ class Produk_model{
         $this->db->bind('id', $data['id']);
         return $this->db->execute();
     }
-
-    public function daleteData() {
-        $url = "index.php?menu=kategori";
-        $pesan = "Data berhasil dihapus";
-
-        echo "<script>alert('$pesan'); location='$url'; </script> ";
-    }
-        
 }

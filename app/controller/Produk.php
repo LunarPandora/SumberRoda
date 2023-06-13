@@ -8,17 +8,25 @@ class Produk extends Controller{
     
     public function getAllData()
     {
+        var_dump(json_encode($this->model('Produk_model')->getAllData()));
         return $this->model('Produk_model')->getAllData();
     }
     
     public function addData()
     {
+        $image = $this->moveImage($_FILES['gambar']);
+        if($image == false){
+            return 0;
+        }
+        
+        $_POST['gambar'] = $image;
         if($this->model('Produk_model')->insertData($_POST))
         {
             return "$_POST[nama] berhasil ditambah";
         }
         
-        return "$_POST[nama] gagal dimasukkan, coba tambahkan ulang";
+        $_SESSION['invalid_data'][] = "$_POST[nama] gagal dimasukkan, coba tambahkan ulang";
+        return 0;
     }
     
     public function getData()
@@ -33,17 +41,19 @@ class Produk extends Controller{
             return "$_POST[nama] berhasil diubah";
         }
         
-        return "$_POST[nama] gagal diubah";
+        $_SESSION['invalid_data'][] = "$_POST[nama] gagal diubah";
+        return 0;
     }
     
     public function deleteData()
     {
         if($this->model('Produk_model')->removeData($_POST))
         {
-            return "$_POST[nama] berhasil dihapus";
+            return "Data berhasil dihapus";
         }
         
-        return "$_POST[nama] gagal dihapus";
+        $_SESSION['invalid_data'][] = "Data gagal dihapus";
+        return 0;
     }
 
     public function getDataMerek()
@@ -54,5 +64,34 @@ class Produk extends Controller{
     public function getDataKategori()
     {
         return $this->model('Kategori_model')->getAllData();
+    }
+    
+    public function moveImage($file)
+    {
+        if($file){
+            $accepted_ext = array('png', 'jpg', 'jpeg');
+            $exploded_name = explode('.', $file['name']);
+            $ext = strtolower(end($exploded_name));
+            $file_name = time().implode("_", explode(" ", $file['name']));
+            
+            if($file['size'] > 2048000){
+                $_SESSION['invalid_data'][] = "Silahkan cek ukuran file yang dimasukkan, tidak boleh melebihi 2 MB";
+                return false;
+            }
+            
+            if(!in_array($ext, $accepted_ext)){
+                $_SESSION['invalid_data'][] = "Extension file harus PNG, JPG, atau JPEG";
+                return false;
+            }
+            
+            if(isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) != "off"){
+                move_uploaded_file($file['tmp_name'], BASE_URL."storage/images/$file_name");
+            }else{
+                move_uploaded_file($file['tmp_name'], "../../storage/images/$file_name");
+            }
+            return $file_name;
+        }
+        
+        return null;
     }
 }

@@ -43,11 +43,4 @@ class Kategori_model{
         $this->db->bind('id', $data['id']);
         return $this->db->execute();
     }
-
-    public function daleteData() {
-        $url = "index.php?menu=kategori";
-        $pesan = "Data berhasil dihapus";
-
-        echo "<script>alert('$pesan'); location='$url'; </script> ";
-    }
 }

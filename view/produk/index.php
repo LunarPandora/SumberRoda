@@ -11,7 +11,7 @@ if(isset($_POST['action'])){
     }else{
         $result = $page->updateData();
     }
-    header('location:'.BASE_URL.'/view/produk');
+    header('location:'.BASE_URL.'view/produk');
 }
 
 if(isset($_POST['edit'])){
@@ -20,7 +20,7 @@ if(isset($_POST['edit'])){
 
 if(isset($_POST['delete'])){
     $page->deleteData();
-    header('location:'.BASE_URL.'/view/produk');
+    // header('location:'.BASE_URL.'view/produk');
 }
 ?>
 <!DOCTYPE html>
@@ -52,8 +52,17 @@ if(isset($_POST['delete'])){
                 <?php $page->view('template/admin/menu_top'); ?>
                 
                 <div class="container-fluid">
-                        <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Manajemen Data Produk</h1>
+                    <?php
+                        if(isset($_SESSION['invalid_data']) && !isset($_POST['action']) && !isset($_POST['edit']) && !isset($_POST['delete'])){
+                            foreach($_SESSION['invalid_data'] as $error){
+                                echo "<div class=\"alert alert-danger\">$error</div>";
+                            }
+                            
+                            unset($_SESSION['invalid_data']);
+                        }
+                    ?>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Manajemen Data Produk</h1>
                     <p class="mb-4">
                         Halaman ini digunakan untuk mengelola data Produk
                     </p>
@@ -87,10 +96,9 @@ if(isset($_POST['delete'])){
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        var_dump($page->getAllData());
                                         foreach($page->getAllData() as $row)
                                         {
-                                            $id = $row['id'];
+                                            $id = $row['merek'];
                                         ?>
                                             <tr>
                                                 <td><?= $i; ?></td>
@@ -102,9 +110,9 @@ if(isset($_POST['delete'])){
                                                 <td><?= $row['deskripsi']; ?></td>
                                                 <td class="d-flex gap-1 p-1">
                                                     <form id="edit-form" method="post">
-                                                    <input type="hidden" name="id" value="<?= $id; ?>">
-                                                        <button type="submit" name="edit" class="btn btn-warning">
-                                                            <i class="fa fa-edit"></i>
+                                                        <input type="hidden" name="id" value="<?= $id; ?>">
+                                                            <button type="submit" name="edit" class="btn btn-warning">
+                                                                <i class="fa fa-edit"></i>
                                                         </button>
                                                     </form>
                                                     <form id="delete-form" method="post">
@@ -144,7 +152,7 @@ if(isset($_POST['delete'])){
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="form-data" method="post">
+                    <form id="form-data" method="post" enctype="multipart/form-data">
                         <input type="hidden" id="id" name="id">
                         <div class="form-group">
                             <label for="nama" class="form-label">Nama</label>
@@ -175,17 +183,19 @@ if(isset($_POST['delete'])){
 
                         <div class="form-group">
                             <label for="harga" class="form-label">Harga</label>
-                            <input type="text" id="harga" name="harga" class="form-control" require placeholder="Masukkan harga produk">
+                            <input type="number" id="harga" name="harga" class="form-control" require placeholder="Masukkan harga produk">
                         </div>
 
                         <div class="form-group">
-                            <label for="gambar" class="form-label">Gambar<sup class="text-danger">*Kosongkan jika tidak ada gambar</sup></label>
-                            <input type="file" name="gambar" id="gambar" class="form-control">
+                            <label for="gambar" class="form-label">
+                                Gambar<sup class="text-danger">*Kosongkan jika tidak ada gambar, dan tidak boleh lebih dari 2MB</sup>
+                            </label>
+                            <input accept=".png, .jpeg, .jpg" type="file" name="gambar" id="gambar" class="form-control">
                         </div>
                         
                         <div class="form-group">
                             <label for="deskripsi" class="form-label">Deskripsi<sup class="text-danger">*Kosongkan jika tidak ada deskripsi</sup></label>
-                            <input type="text" id="deskripsi" name="deskripsi" class="form-control" require placeholder="Masukan deskripsi produk"> 
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" require placeholder="Masukan deskripsi produk"></textarea>
                         </div>
 
                         <div class="modal-footer">

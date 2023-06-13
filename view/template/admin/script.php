@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/64a5c269d8.js" crossorigin="anonymous"></script>
 <script src="<?= BASE_URL ?>assets/js/admin-script.js" async></script>
 <script src="<?= BASE_URL ?>assets/themes/vendor/jquery/jquery.min.js"></script>
 <script src="<?= BASE_URL ?>assets/themes/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -21,4 +22,3 @@
 
 <!-- Page level custom scripts -->
 <script src="<?= BASE_URL ?>assets/themes/js/demo/datatables-demo.js"></script>
-<script src="https://kit.fontawesome.com/64a5c269d8.js" crossorigin="anonymous"></script>
